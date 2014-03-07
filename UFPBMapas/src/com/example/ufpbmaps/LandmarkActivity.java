@@ -23,7 +23,7 @@ public class LandmarkActivity extends Activity {
 		t.setText(landmark.getName());
 
 		ImageView i = (ImageView) findViewById(R.id.landmarkImage);
-		i.setImageResource(R.drawable.ufpb);
+		i.setImageResource(landmark.getPicture());
 		
 		TextView t1 = (TextView) findViewById(R.id.landmarkDescription);
 		t1.setText(landmark.getDescription());
