@@ -17,6 +17,6 @@
     <string name="cancel">Cancelar</string>
     <string name="destination_name">Destinos</string>
     <string name="landmark_name">Posição</string>
-    <string name="landmark_button_list">Criar rota para</string>
+    <string name="landmark_button_list">-- Criar rota para:</string>
 
 </resources>
