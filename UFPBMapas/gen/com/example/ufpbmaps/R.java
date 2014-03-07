@@ -28,28 +28,29 @@ public final class R {
         public static final int ufpb=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f080016;
+        public static final int action_settings=0x7f080017;
         public static final int buttonLinearLayout=0x7f080002;
-        public static final int buttonMainLinearLayout=0x7f080011;
+        public static final int buttonMainLinearLayout=0x7f080012;
         public static final int buttonScrollView=0x7f08000e;
         public static final int buttonTittle=0x7f08000d;
-        public static final int destinationButton=0x7f080013;
+        public static final int destinationButton=0x7f080014;
         public static final int destinationLinearLayout=0x7f080000;
-        public static final int eventButton=0x7f080015;
+        public static final int eventButton=0x7f080016;
         public static final int eventPopupCloseButton=0x7f080008;
         public static final int eventPopupEditText=0x7f080005;
         public static final int eventPopupHorizontalLayout=0x7f080006;
         public static final int eventPopupLinearLayout=0x7f080003;
         public static final int eventPopupQRCodeButton=0x7f080007;
         public static final int eventPopupTextView=0x7f080004;
-        public static final int gpsButton=0x7f080014;
+        public static final int gpsButton=0x7f080015;
         public static final int greetingText=0x7f080010;
         public static final int landmarkDescription=0x7f08000c;
+        public static final int landmarkImage=0x7f08000b;
         public static final int landmarkLinearLayout=0x7f080009;
         public static final int landmarkName=0x7f08000a;
-        public static final int logoImage=0x7f08000b;
+        public static final int logoImage=0x7f080011;
         public static final int mainLinearLayout=0x7f08000f;
-        public static final int qrcodeButton=0x7f080012;
+        public static final int qrcodeButton=0x7f080013;
         public static final int textView1=0x7f080001;
     }
     public static final class layout {

@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,16 +21,19 @@ public class LandmarkActivity extends Activity {
 				
 		TextView t = (TextView) findViewById(R.id.landmarkName);
 		t.setText(landmark.getName());
+
+		ImageView i = (ImageView) findViewById(R.id.landmarkImage);
+		i.setImageResource(R.drawable.ufpb);
 		
 		TextView t1 = (TextView) findViewById(R.id.landmarkDescription);
 		t1.setText(landmark.getDescription());
 
 		LinearLayout l1 = (LinearLayout)findViewById(R.id.buttonLinearLayout);
 		
-		for(int i = 1; i <= 23; i++){
-			if(i != landmark.getId()){
+		for(int j = 1; j <= 23; j++){
+			if(j != landmark.getId()){
 				Button destination = new Button(this);
-				destination.setText(DBLandmark.getInstance().getLdm(i).getName());
+				destination.setText(DBLandmark.getInstance().getLdm(j).getName());
 				l1.addView(destination);
 			}
 		}
