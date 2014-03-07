@@ -1,10 +1,14 @@
 package com.example.ufpbmaps;
 
 import entities.DBLandmark;
+import entities.DBRoutes;
 import entities.Landmark;
+import entities.Route;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -33,9 +37,28 @@ public class LandmarkActivity extends Activity {
 		for(int j = 1; j <= 23; j++){
 			if(j != landmark.getId()){
 				Button destination = new Button(this);
+				destination.setId(j);
 				destination.setText(DBLandmark.getInstance().getLdm(j).getName());
+				destination.setOnClickListener(abreRota);
 				l1.addView(destination);
 			}
 		}
 	}
+	
+	private void initiateRouteActivity(Route route){
+		Intent intent = new Intent(this, RouteActivity.class);
+		intent.putExtra("Route", route);
+		startActivity(intent);
+	}
+	
+	private OnClickListener abreRota = new OnClickListener() { 
+		public void onClick(View v) { 
+			Intent intent = getIntent();
+			Landmark origem = (Landmark) intent.getSerializableExtra("Landmark");
+			Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
+			if(origem.getId() == 1 || destino.getId() == 1) {
+				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
+			}
+		} 
+	};
 }

@@ -26,6 +26,7 @@
         </activity>
         
         <activity android:label="@string/landmark_name" android:name="LandmarkActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/route_name" android:name="RouteActivity" android:screenOrientation="portrait"/>
         <activity android:label="@string/destination_name" android:name="DestinationActivity" android:screenOrientation="portrait"/>
         
     </application>

@@ -1,10 +1,10 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-import android.widget.ImageView;
-
-public class Route {
+@SuppressWarnings("serial")
+public class Route implements Serializable {
 	private int id;
 	private int sourceId; //Primary Key A
 	private int destinationId; //Primary Key B

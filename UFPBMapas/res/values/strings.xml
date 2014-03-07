@@ -18,5 +18,7 @@
     <string name="destination_name">Destinos</string>
     <string name="landmark_name">Posição</string>
     <string name="landmark_button_list">-- Criar rota para:</string>
+    <string name="route_button_list">-- Instruções:</string>
+    <string name="route_name">Rota</string>
 
 </resources>

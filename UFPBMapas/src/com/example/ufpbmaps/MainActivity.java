@@ -122,15 +122,10 @@ public class MainActivity extends Activity {
 		}
 
 		int key = Integer.parseInt(accessCode());
-		System.out.println("A");
 		Landmark landmark = DBLandmark.getInstance().getLdm(key);
-		System.out.println("B");
 		Intent intent2 = new Intent(this, LandmarkActivity.class);
-		System.out.println("C");
 		intent2.putExtra("Landmark", landmark);
-		System.out.println("D");
 		startActivity(intent2);
-		System.out.println("E");
 	}
 	
 	public String accessCode(){
