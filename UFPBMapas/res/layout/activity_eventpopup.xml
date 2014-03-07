@@ -4,7 +4,8 @@
 	android:layout_height="wrap_content"
 	android:background="@drawable/bg"
 	android:orientation="vertical" 
-	android:padding="10sp" >
+	android:padding="10sp"
+	android:screenOrientation="portrait">
 	
 	<TextView 
 		android:id="@+id/eventPopupTextView" 
