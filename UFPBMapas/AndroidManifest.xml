@@ -15,7 +15,9 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.example.ufpbmaps.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,8 +25,8 @@
             </intent-filter>
         </activity>
         
-        <activity android:label="@string/landmark_name" android:name="LandmarkActivity"/>
-        <activity android:label="@string/destination_name" android:name="DestinationActivity"/>
+        <activity android:label="@string/landmark_name" android:name="LandmarkActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/destination_name" android:name="DestinationActivity" android:screenOrientation="portrait"/>
         
     </application>
 
