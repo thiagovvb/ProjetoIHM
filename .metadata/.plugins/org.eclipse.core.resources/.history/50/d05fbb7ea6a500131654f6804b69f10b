@@ -26,12 +26,10 @@ public class LandmarkActivity extends Activity {
 
 		LinearLayout l1 = (LinearLayout)findViewById(R.id.buttonLinearLayout);
 		
-		for(int i = 1; i <= 23; i++){
-			if(i != landmark.getId()){
-				Button destination = new Button(this);
-				destination.setText(DBLandmark.getInstance().getLdm(i).getName());
-				l1.addView(destination);
-			}
+		for(int i = 1; i <= 23 && i != landmark.getId(); i++){
+			Button destination = new Button(this);
+			destination.setText(DBLandmark.getInstance().getLdm(i).getName());
+			l1.addView(destination);
 		}
 	}
 }

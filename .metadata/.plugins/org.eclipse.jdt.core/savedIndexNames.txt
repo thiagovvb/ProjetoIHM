@@ -1,0 +1,3 @@
+INDEX VERSION 1.126+C:\Users\Lauciano\Documents\GitHub\ProjetoIHM\.metadata\.plugins\org.eclipse.jdt.core
+875732381.index
+3032077369.index

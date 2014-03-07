@@ -31,8 +31,8 @@ public final class R {
         public static final int action_settings=0x7f080016;
         public static final int buttonLinearLayout=0x7f080002;
         public static final int buttonMainLinearLayout=0x7f080011;
-        public static final int buttonScrollView=0x7f08000d;
-        public static final int buttonTittle=0x7f08000e;
+        public static final int buttonScrollView=0x7f08000e;
+        public static final int buttonTittle=0x7f08000d;
         public static final int destinationButton=0x7f080013;
         public static final int destinationLinearLayout=0x7f080000;
         public static final int eventButton=0x7f080015;
