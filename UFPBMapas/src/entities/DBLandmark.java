@@ -2,8 +2,6 @@ package entities;
 
 import java.util.ArrayList;
 
-import android.widget.ImageView;
-
 public class DBLandmark {
 
 	private static ArrayList<Landmark> landmarks;
@@ -30,7 +28,7 @@ public class DBLandmark {
 	 * @param picture
 	 * @param description
 	 */
-	public void addLdm(int id, String name, ImageView picture, String description){
+	public void addLdm(int id, String name, int picture, String description){
 		Landmark aux = new Landmark(id, name, picture, description);
 		landmarks.add(aux);
 	}
