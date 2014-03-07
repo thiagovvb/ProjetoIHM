@@ -55,7 +55,7 @@ public class LandmarkActivity extends Activity {
 		public void onClick(View v) { 
 			Intent intent = getIntent();
 			Landmark origem = (Landmark) intent.getSerializableExtra("Landmark");
-			Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
+			//Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
 			if(origem.getId() == 1 || origem.getId() == 7) {
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
 			} else {
