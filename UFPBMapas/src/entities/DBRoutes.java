@@ -30,7 +30,7 @@ public class DBRoutes {
 	 * @param picture
 	 * @param description
 	 */
-	public void addRoute(String id, String sourceId, String destinationId, ImageView map, ArrayList<Step> allTurns){
+	public void addRoute(int id, int sourceId, int destinationId, int map, ArrayList<Step> allTurns){
 		Route aux = new Route(id, sourceId, destinationId, map, allTurns);
 		routes.add(aux);
 	}

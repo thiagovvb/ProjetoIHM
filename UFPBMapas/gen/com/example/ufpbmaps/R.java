@@ -28,8 +28,9 @@ public final class R {
         public static final int ic_launcher=0x7f020004;
         public static final int logoufpb=0x7f020005;
         public static final int reitoria=0x7f020006;
-        public static final int ufpb=0x7f020007;
-        public static final int ufpb_virual=0x7f020008;
+        public static final int sem_imagem=0x7f020007;
+        public static final int ufpb=0x7f020008;
+        public static final int ufpb_virual=0x7f020009;
     }
     public static final class id {
         public static final int action_settings=0x7f080017;
