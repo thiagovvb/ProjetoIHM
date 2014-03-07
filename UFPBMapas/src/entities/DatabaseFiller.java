@@ -15,7 +15,7 @@ public class DatabaseFiller {
 		DBLandmark.getInstance().addLdm(5, "Centro de Ciências Humanas, Letras e Artes - CCHLA", R.drawable.sem_imagem, "Centro que oferece diversos cursos, entre eles, Pedagogia, Psicopedagogia e Ciências das Religião");
 		DBLandmark.getInstance().addLdm(6, "Centro de Vivência", R.drawable.sem_imagem, "Local de confraternização da UFPB");
 		DBLandmark.getInstance().addLdm(7, "Biblioteca Central", R.drawable.biblio_central, "Maior biblioteca da UFPB.");
-		DBLandmark.getInstance().addLdm(8, "Centro de Ciências Exatas e da Natureza - CCEN", R.drawable.sem_imagem, "Inclui cursos de Biologia, Estatística, Matemática e Física");
+		DBLandmark.getInstance().addLdm(8, "Centro de Ciências Exatas e da Natureza - CCEN", R.drawable.ccen, "Inclui cursos de Biologia, Estatística, Matemática e Física");
 		DBLandmark.getInstance().addLdm(9, "Reitoria", R.drawable.reitoria, "Reitoria da UFPB");
 		DBLandmark.getInstance().addLdm(10, "Setor Esportivo", R.drawable.sem_imagem, "Cursos de Educação Física da UFPB");
 		DBLandmark.getInstance().addLdm(11, "Centro de Ciências da Saúde - CCS", R.drawable.sem_imagem, "Inclui cursos de Medicina, Enfermagem e Farmácia");
@@ -34,10 +34,10 @@ public class DatabaseFiller {
 	}
 	
 	public static void databaseFillerRoute() {
-		DBRoutes.getInstance().addRoute(1, 1, 7, R.drawable.sem_imagem, null);
-		DBRoutes.getInstance().addRoute(2, 7, 1, R.drawable.sem_imagem, null);
-		DBRoutes.getInstance().addRoute(3, 8, 19, R.drawable.sem_imagem, null);
-		DBRoutes.getInstance().addRoute(4, 19, 8, R.drawable.sem_imagem, null);
+		DBRoutes.getInstance().addRoute(1, 1, 7, R.drawable.rota_1_7, null);
+		DBRoutes.getInstance().addRoute(2, 7, 1, R.drawable.rota_1_7, null);
+		DBRoutes.getInstance().addRoute(3, 8, 19, R.drawable.rota_19_8, null);
+		DBRoutes.getInstance().addRoute(4, 19, 8, R.drawable.rota_19_8, null);
 	}
 
 }

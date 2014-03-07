@@ -24,13 +24,16 @@ public final class R {
         public static final int bg=0x7f020000;
         public static final int bg_2=0x7f020001;
         public static final int biblio_central=0x7f020002;
-        public static final int central_de_aulas=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int logoufpb=0x7f020005;
-        public static final int reitoria=0x7f020006;
-        public static final int sem_imagem=0x7f020007;
-        public static final int ufpb=0x7f020008;
-        public static final int ufpb_virual=0x7f020009;
+        public static final int ccen=0x7f020003;
+        public static final int central_de_aulas=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int logoufpb=0x7f020006;
+        public static final int reitoria=0x7f020007;
+        public static final int rota_19_8=0x7f020008;
+        public static final int rota_1_7=0x7f020009;
+        public static final int sem_imagem=0x7f02000a;
+        public static final int ufpb=0x7f02000b;
+        public static final int ufpb_virual=0x7f02000c;
     }
     public static final class id {
         public static final int action_settings=0x7f080017;
@@ -63,6 +66,7 @@ public final class R {
         public static final int activity_eventpopup=0x7f030001;
         public static final int activity_landmark=0x7f030002;
         public static final int activity_main=0x7f030003;
+        public static final int activity_route=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -84,6 +88,7 @@ public final class R {
         public static final int landmark_button_list=0x7f050010;
         public static final int landmark_name=0x7f05000f;
         public static final int qrcode_button=0x7f050004;
+        public static final int route_button_list=0x7f050011;
         public static final int todo_string=0x7f050008;
     }
     public static final class style {
