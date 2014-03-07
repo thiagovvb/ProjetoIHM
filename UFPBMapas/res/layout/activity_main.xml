@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLinearLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_2"
+    android:orientation="vertical" 
+    android:screenOrientation="portrait">
+    
+    <TextView
+        android:id="@+id/greetingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="35dp"
+        android:paddingTop="25dp"
+        android:text="@string/greeting"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/logoImage"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:clickable="false"
+        android:contentDescription="@string/todo_string"
+        android:paddingBottom="15dp"
+        android:src="@drawable/logoufpb" />
+
+    <LinearLayout
+        android:id="@+id/buttonMainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="20dp" >
+        
+        <Button
+            android:id="@+id/qrcodeButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/qrcode_button"
+            android:onClick="lerQR"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/destinationButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/destino_button"
+            android:onClick="executeDestination"
+            android:textColor="#ffffff" />
+    
+    	<Button
+    	    android:id="@+id/gpsButton"
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="fill_parent"
+    	    android:layout_weight="1"
+    	    android:text="@string/gps_button"
+    	    android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/eventButton"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:text="@string/evento_button"
+            android:textColor="#ffffff" />
+
+    </LinearLayout>
+
+</LinearLayout>

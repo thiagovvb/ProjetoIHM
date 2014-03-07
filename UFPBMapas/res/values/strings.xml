@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UFPB Mapas</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="greeting">Bem vindo ao UFPB Mapas!</string>
+    <string name="qrcode_button">QR Code</string>
+    <string name="destino_button">Destino</string>
+    <string name="evento_button">Evento</string>
+    <string name="gps_button">GPS</string>
+    <string name="todo_string">TODO</string>
+    <string name="hint_event">Código do evento com 8 dígitos</string>
+    <string name="label_destino">Opções de destino</string>
+    <string name="event_popup">Digite o Código do Evento</string>
+    <string name="event_popup_button">QR Code</string>
+    <string name="cancel">Cancelar</string>
+    <string name="destination_name">Destinos</string>
+    <string name="landmark_name">Posição</string>
+    <string name="landmark_button_list">Criar rota para</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/eventPopupLinearLayout" 
+	android:layout_width="wrap_content" 
+	android:layout_height="wrap_content"
+	android:background="@drawable/bg"
+	android:orientation="vertical" 
+	android:padding="10sp" >
+	
+	<TextView 
+		android:id="@+id/eventPopupTextView" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content" 
+		android:layout_marginTop="25dp" 
+		android:layout_marginLeft="5dp" 
+		android:text="@string/event_popup"
+		android:textColor="#ffffff"
+		android:textSize="15sp" />
+
+	<EditText
+	    android:id="@+id/eventPopupEditText"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:layout_marginTop="25dp" 
+	    android:ems="10"
+	    android:hint="@string/hint_event"
+		android:textColor="#ffffff"
+		android:textColorHint="#ffffff"
+	    android:textSize="12sp" >
+
+	    <requestFocus />
+	</EditText>
+	
+	<LinearLayout
+	    android:id="@+id/eventPopupHorizontalLayout"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+		android:layout_marginTop="25dp" 
+	    android:orientation="horizontal" >
+
+	    <Button
+	        android:id="@+id/eventPopupQRCodeButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/event_popup_button"
+			android:textColor="#ffffff"
+	    	android:textSize="12sp" />
+
+	    <Button
+	        android:id="@+id/eventPopupCloseButton"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1"
+	        android:text="@string/cancel"
+			android:textColor="#ffffff"
+	    	android:textSize="12sp" />
+	</LinearLayout>
+	
+</LinearLayout>
