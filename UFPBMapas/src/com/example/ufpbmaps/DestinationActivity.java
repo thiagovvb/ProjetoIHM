@@ -26,12 +26,18 @@ public class DestinationActivity extends Activity {
 		}
 	}
 	
+	public void initiateDestinationLandmark(int viewId) {
+		
+		Intent intent = new Intent(this, DestinationLandmarkActivity.class);
+		Landmark destination = DBLandmark.getInstance().getLdm(viewId);
+		intent.putExtra("Landmark", destination);
+		startActivity(intent);
+	}
+	
 	protected OnClickListener destination_button_click_listener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			Intent intent = getIntent();
-			Landmark destination = DBLandmark.getInstance().getLdm(v.getId());
-			intent.putExtra("Landmark", destination);
+			initiateDestinationLandmark(v.getId());
 		}
 	};
 }

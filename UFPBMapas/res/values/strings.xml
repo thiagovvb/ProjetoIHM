@@ -21,5 +21,6 @@
     <string name="route_button_list">-- Instruções:</string>
     <string name="route_name">Rota</string>
     <string name="destinationlandmark_button_list">-- Criar rota de:</string>
+    <string name="destinationlandmark_name">Destino</string>
 
 </resources>

@@ -46,8 +46,11 @@ public class LandmarkActivity extends Activity {
 	}
 	
 	private void initiateRouteActivity(Route route){
+		System.out.println("Passou daqui CI1");
 		Intent intent = new Intent(this, RouteActivity.class);
+		System.out.println("Passou daqui CI2");
 		intent.putExtra("Route", route);
+		System.out.println("Passou daqui CI3");
 		startActivity(intent);
 	}
 	
@@ -60,9 +63,13 @@ public class LandmarkActivity extends Activity {
 			System.out.println("Passou daqui C");
 			//Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
 			if(origem.getId() == 1 || origem.getId() == 7) {
+				System.out.println("Passou daqui CI");
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
+				System.out.println("Passou daqui CII");
 			} else {
+				System.out.println("Passou daqui CIII");
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(2));
+				System.out.println("Passou daqui CIV");
 			}
 			System.out.println("Passou daqui D");
 		}

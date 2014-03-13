@@ -48,6 +48,7 @@ public class MainActivity extends Activity {
 		});
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();
+			DatabaseFiller.databaseFillerRoute();
 			dbfilled = true;
 		}
 	}
