@@ -17,11 +17,18 @@
         android:textColor="#ffffff"
         android:textSize="25sp" />
 
-    <LinearLayout
-        android:id="@+id/buttonLinearLayout"
+    <ScrollView
+        android:id="@+id/buttonLandmarkScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-    </LinearLayout>
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/buttonLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

@@ -21,9 +21,7 @@ public class LandmarkActivity extends Activity {
 		setContentView(R.layout.activity_landmark);
 		
 		Intent intent = getIntent();
-		//Landmark landmark = (Landmark) intent.getSerializableExtra("Landmark");
-		//Apenas para testar pq nao temos código QR para usar por enquanto
-		Landmark landmark = DBLandmark.getInstance().getLdm(1);
+		Landmark landmark = (Landmark) intent.getSerializableExtra("Landmark");
 		
 		TextView t = (TextView) findViewById(R.id.landmarkName);
 		t.setText(landmark.getName());
