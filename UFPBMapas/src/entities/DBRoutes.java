@@ -39,7 +39,6 @@ public class DBRoutes {
 	 * @return
 	 */
 	public Route getRoute(int id){
-		System.out.println("Passou daqui M " + routes.size());
 		return routes.get(id-1);
 	}
 	

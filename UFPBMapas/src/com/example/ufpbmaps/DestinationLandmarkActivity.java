@@ -51,33 +51,21 @@ public class DestinationLandmarkActivity extends Activity {
 	}
 	
 	private void initiateRouteActivity(Route route){
-		System.out.println("Passou daqui E");
 		Intent intent = new Intent(this, RouteActivity.class);
-		System.out.println("Passou daqui F");
 		intent.putExtra("Route", route);
-		System.out.println("Passou daqui G");
 		startActivity(intent);
-		System.out.println("Passou daqui H");
 	}
 	
 	private OnClickListener abreRota = new OnClickListener() { 
 		public void onClick(View v) {
-			System.out.println("Passou daqui A");
 			Intent intent = getIntent();
-			System.out.println("Passou daqui B");
 			Landmark origem = (Landmark) intent.getSerializableExtra("Landmark");
-			System.out.println("Passou daqui C");
 			//Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
 			if(origem.getId() == 1 || origem.getId() == 7) {
-				System.out.println("Passou daqui D");
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
-				System.out.println("Passou daqui I");
 			} else {
-				System.out.println("Passou daqui J");
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(2));
-				System.out.println("Passou daqui K");
 			}
-			System.out.println("Passou daqui L");
 		}
 	};
 }
