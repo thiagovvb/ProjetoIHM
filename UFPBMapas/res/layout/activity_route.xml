@@ -41,7 +41,7 @@
         android:paddingLeft="15dp"
         android:paddingRight="15dp"
         android:paddingTop="10dp"
-        android:text="@string/landmark_button_list"
+        android:text="@string/route_button_list"
         android:textColor="#ffffff"
         android:textSize="20sp" />
 
