@@ -21,8 +21,10 @@ public class LandmarkActivity extends Activity {
 		setContentView(R.layout.activity_landmark);
 		
 		Intent intent = getIntent();
-		Landmark landmark = (Landmark) intent.getSerializableExtra("Landmark");
-				
+		//Landmark landmark = (Landmark) intent.getSerializableExtra("Landmark");
+		//Apenas para testar pq nao temos código QR para usar por enquanto
+		Landmark landmark = DBLandmark.getInstance().getLdm(1);
+		
 		TextView t = (TextView) findViewById(R.id.landmarkName);
 		t.setText(landmark.getName());
 
@@ -52,15 +54,19 @@ public class LandmarkActivity extends Activity {
 	}
 	
 	private OnClickListener abreRota = new OnClickListener() { 
-		public void onClick(View v) { 
+		public void onClick(View v) {
+			System.out.println("Passou daqui A");
 			Intent intent = getIntent();
+			System.out.println("Passou daqui B");
 			Landmark origem = (Landmark) intent.getSerializableExtra("Landmark");
+			System.out.println("Passou daqui C");
 			//Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
 			if(origem.getId() == 1 || origem.getId() == 7) {
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
 			} else {
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(2));
 			}
+			System.out.println("Passou daqui D");
 		}
 	};
 }
