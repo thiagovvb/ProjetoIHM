@@ -2,8 +2,6 @@ package entities;
 
 import java.util.ArrayList;
 
-import android.widget.ImageView;
-
 public class DBRoutes {
 
 	private ArrayList<Route> routes;

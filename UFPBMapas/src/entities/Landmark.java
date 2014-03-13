@@ -1,6 +1,5 @@
 package entities;
 
-import android.widget.ImageView;
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
