@@ -61,6 +61,6 @@ public class LandmarkActivity extends Activity {
 			} else {
 				initiateRouteActivity(DBRoutes.getInstance().getRoute(2));
 			}
-		} 
+		}
 	};
 }
