@@ -8,7 +8,7 @@
     <string name="qrcode_button">QR Code</string>
     <string name="destino_button">Destino</string>
     <string name="evento_button">Evento</string>
-    <string name="gps_button">GPS</string>
+    <string name="gps_button">Mapa da UFPB</string>
     <string name="todo_string">TODO</string>
     <string name="hint_event">Código do evento com 8 dígitos</string>
     <string name="label_destino">Opções de destino</string>

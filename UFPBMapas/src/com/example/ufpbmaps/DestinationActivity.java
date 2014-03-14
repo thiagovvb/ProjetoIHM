@@ -27,7 +27,6 @@ public class DestinationActivity extends Activity {
 	}
 	
 	public void initiateDestinationLandmark(int viewId) {
-		
 		Intent intent = new Intent(this, DestinationLandmarkActivity.class);
 		Landmark destination = DBLandmark.getInstance().getLdm(viewId);
 		intent.putExtra("Landmark", destination);
