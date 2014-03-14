@@ -129,6 +129,11 @@ public class MainActivity extends Activity {
 		return (String) tokens.nextToken();
 	}
 	
+	public void showMapScreen(View view){
+		  Intent intent = new Intent(this, MapActivity.class);
+		  startActivity(intent);		
+	}
+	
 	/*
 	 * 
 	 * INÍCIO: TRATAMENTO BOTÃO DESTINO

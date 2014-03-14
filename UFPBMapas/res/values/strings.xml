@@ -22,5 +22,7 @@
     <string name="route_name">Rota</string>
     <string name="destinationlandmark_button_list">-- Criar rota de:</string>
     <string name="destinationlandmark_name">Destino</string>
+    <string name="maps_text">Mapa da UFPB:</string>
+    <string name="gps_name">Mapa da UFPB</string>
 
 </resources>
