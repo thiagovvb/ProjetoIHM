@@ -77,14 +77,10 @@ public class MainActivity extends Activity {
 	public void lerQR(View view) {		
 		// Criamos um Intent com o caminho aplicativo que irá ler o QR code
 		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-
 		// Passamos o parametro "SCAN_MODE" para ler somente códigos no formato
 		// QR
-		intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-
 		try {
 			startActivityForResult(intent, 0);
-
 		} catch (ActivityNotFoundException e) {
 			mostrarMensagem();
 		}
@@ -112,7 +108,6 @@ public class MainActivity extends Activity {
 								}
 							}
 						}).setNegativeButton("Cancelar", null).show();
-
 	}
 
 	@Override
@@ -121,7 +116,6 @@ public class MainActivity extends Activity {
 			QRCode = intent.getStringExtra("SCAN_RESULT");
 
 		}
-
 		int key = Integer.parseInt(accessCode());
 		Landmark landmark = DBLandmark.getInstance().getLdm(key);
 		Intent intent2 = new Intent(this, LandmarkActivity.class);
@@ -129,7 +123,7 @@ public class MainActivity extends Activity {
 		startActivity(intent2);
 	}
 	
-	public String accessCode(){
+	public String accessCode(){		 
 		StringTokenizer tokens = new StringTokenizer(QRCode);
 		tokens.nextToken();
 		return (String) tokens.nextToken();
