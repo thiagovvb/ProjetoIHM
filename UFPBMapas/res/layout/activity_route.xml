@@ -24,14 +24,6 @@
         android:layout_height="150dp"
         android:clickable="false"
         android:contentDescription="@string/todo_string" />
-    
-    <TextView
-        android:id="@+id/landmarkDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/landmark_name"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/buttonTittle"
