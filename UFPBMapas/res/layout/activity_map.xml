@@ -5,19 +5,10 @@
     android:background="@drawable/bg_2"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/maps_text"
-        android:textColor="#ffffff"
-        android:textColorHint="#ffffff"
-        android:textSize="30sp" />
-
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@drawable/ufpb_real" />
 
 </LinearLayout>
