@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 	
 	protected static final String ZXING_MARKET = "market://search?q=pname:com.google.zxing.client.android";
 	protected static final String ZXING_DIRECT = "https://zxing.googlecode.com/files/BarcodeScanner3.1.apk";
-	public String QRCode = "";
+	public String QRCode = " ";
 
 	/**
 	 * Método que será chamado no clique do botão
@@ -77,8 +77,8 @@ public class MainActivity extends Activity {
 	public void lerQR(View view) {		
 		// Criamos um Intent com o caminho aplicativo que irá ler o QR code
 		Intent intent = new Intent("com.google.zxing.client.android.SCAN");
-		// Passamos o parametro "SCAN_MODE" para ler somente códigos no formato
-		// QR
+		intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
+		// Passamos o parametro "SCAN_MODE" para ler somente códigos no formato QR
 		try {
 			startActivityForResult(intent, 0);
 		} catch (ActivityNotFoundException e) {
@@ -115,12 +115,12 @@ public class MainActivity extends Activity {
 		if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
 			QRCode = intent.getStringExtra("SCAN_RESULT");
 
+			int key = Integer.parseInt(accessCode());
+			Landmark landmark = DBLandmark.getInstance().getLdm(key);
+			Intent intent2 = new Intent(this, LandmarkActivity.class);
+			intent2.putExtra("Landmark", landmark);
+			startActivity(intent2);			
 		}
-		int key = Integer.parseInt(accessCode());
-		Landmark landmark = DBLandmark.getInstance().getLdm(key);
-		Intent intent2 = new Intent(this, LandmarkActivity.class);
-		intent2.putExtra("Landmark", landmark);
-		startActivity(intent2);
 	}
 	
 	public String accessCode(){		 
