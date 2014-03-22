@@ -50,7 +50,14 @@ public class MainActivity extends Activity {
 		h.open();
 		h.insertLandmark("0", "ABC", "Entrada", "Ah oi", "Ah oi");
 		Cursor c = h.fetchLandmark(0);
-		//System.out.println(c.getCount());
+
+		if(c.moveToFirst()){
+			while(!c.isAfterLast()){
+				String data = c.getString(c.getColumnIndex(LandmarkEntity.NAME));
+				System.out.println("Data = " + data);
+				c.moveToNext();
+			}
+		}
 		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();
