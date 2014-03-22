@@ -46,6 +46,8 @@ public class MainActivity extends Activity {
 		
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
+		h.insertLandmark("0", "ABC", "Entrada", "Ah oi", "Ah oi");
+		h.fetchLandmark(0);
 		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();

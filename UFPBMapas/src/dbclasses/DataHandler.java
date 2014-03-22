@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -40,6 +41,13 @@ public class DataHandler {
 		content.put(LandmarkEntity.DESCRIPTION, description);
 		return db.insertOrThrow(LandmarkEntity.TABLE_NAME, null, content);
 	}
+	
+	public Cursor fetchLandmark(int id){
+		String[] columns = new String[] {LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
+		String where = "id_landmark = " + id;
+		return db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null);
+	}
+
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper{
 

@@ -11,6 +11,7 @@ public class Landmark implements Serializable {
 	private int picture;
 	private String description;
 	private ArrayList<Integer> directDestinations;
+	private int isRelevant; // 0 = Irrelevant, 1 = Relevant
 	
 	public Landmark(int id, String acronym, String name, int picture, String description){
 		this.id = id;
@@ -19,6 +20,14 @@ public class Landmark implements Serializable {
 		this.picture = picture;
 		this.description = description;
 		this.directDestinations = null;
+	}
+	
+	public void setRelevant(int r){
+		isRelevant = r;
+	}
+	
+	public int getRelevant(){
+		return isRelevant;
 	}
 	
 	public int getId() {
