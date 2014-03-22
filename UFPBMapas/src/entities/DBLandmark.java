@@ -28,8 +28,8 @@ public class DBLandmark {
 	 * @param picture
 	 * @param description
 	 */
-	public void addLdm(int id, String name, int picture, String description){
-		Landmark aux = new Landmark(id, name, picture, description);
+	public void addLdm(int id, String acronym, String name, int picture, String description){
+		Landmark aux = new Landmark(id, acronym, name, picture, description);
 		landmarks.add(aux);
 	}
 	

@@ -24,13 +24,13 @@ public class LandmarkActivity extends Activity {
 		Landmark landmark = (Landmark) intent.getSerializableExtra("Landmark");
 		
 		TextView t = (TextView) findViewById(R.id.landmarkName);
-		t.setText(landmark.getName());
+		t.setText(landmark.getAcronym());
 
 		ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 		i.setImageResource(landmark.getPicture());
 		
 		TextView t1 = (TextView) findViewById(R.id.landmarkDescription);
-		t1.setText(landmark.getDescription());
+		t1.setText(landmark.getName() + " - " + landmark.getDescription());
 
 		LinearLayout l1 = (LinearLayout)findViewById(R.id.buttonLinearLayout);
 		

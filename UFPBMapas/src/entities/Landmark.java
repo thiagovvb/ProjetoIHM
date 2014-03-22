@@ -6,14 +6,16 @@ import java.util.ArrayList;
 @SuppressWarnings("serial")
 public class Landmark implements Serializable {
 	private int id; //Primary Key
+	private String acronym;
 	private String name;
 	private int picture;
 	private String description;
 	private ArrayList<Integer> directDestinations;
 	
-	public Landmark(int id, String name, int picture, String description){
+	public Landmark(int id, String acronym, String name, int picture, String description){
 		this.id = id;
 		this.name = name;
+		this.acronym = acronym;
 		this.picture = picture;
 		this.description = description;
 		this.directDestinations = null;
@@ -25,6 +27,14 @@ public class Landmark implements Serializable {
 	
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public String getAcronym() {
+		return acronym;
+	}
+	
+	public void setAcronym(String acronym) {
+		this.acronym = acronym;
 	}
 	
 	public String getName() {
