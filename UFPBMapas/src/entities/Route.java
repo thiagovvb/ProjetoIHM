@@ -9,14 +9,14 @@ public class Route implements Serializable {
 	private int sourceId; //Primary Key A
 	private int destinationId; //Primary Key B
 	private int map;
-	private ArrayList<Step> allTurns;
+	private String instruction;
 	
-	public Route(int id, int sourceId, int destinationId, int map, ArrayList<Step> allTurns) {
+	public Route(int id, int sourceId, int destinationId, int map, String instruction) {
 		this.id = id;
 		this.sourceId = sourceId;
 		this.destinationId = destinationId;
 		this.map = map;
-		this.allTurns = allTurns;
+		this.instruction = instruction;
 	}
 
 	public int getId() {
@@ -51,20 +51,20 @@ public class Route implements Serializable {
 		this.map = map;
 	}
 
-	public ArrayList<Step> getAllTurns() {
-		return allTurns;
+	public String getInstruction() {
+		return instruction;
 	}
 
-	public void setAllTurns(ArrayList<Step> allTurns) {
-		this.allTurns = allTurns;
+	public void setInstruction(String instruction) {
+		this.instruction = instruction;
 	}
 	
-	public void copyRoute(int id, int sourceId, int destinationId, int map, ArrayList<Step> allTurns) {
+	public void copyRoute(int id, int sourceId, int destinationId, int map, String instruction) {
 		this.id = id;
 		this.sourceId = sourceId;
 		this.destinationId = destinationId;
 		this.map = map;
-		this.allTurns = allTurns;
+		this.instruction = instruction;
 	}
 
 	@Override
