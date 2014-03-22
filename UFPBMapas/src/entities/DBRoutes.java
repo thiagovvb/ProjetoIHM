@@ -28,8 +28,8 @@ public class DBRoutes {
 	 * @param picture
 	 * @param description
 	 */
-	public void addRoute(int id, int sourceId, int destinationId, int map, String instruction){
-		Route aux = new Route(id, sourceId, destinationId, map, instruction);
+	public void addRoute(int id, int sourceId, int destinationId, int map, String instruction, int dist){
+		Route aux = new Route(id, sourceId, destinationId, map, instruction, dist);
 		routes.add(aux);
 	}
 	

@@ -34,8 +34,8 @@ public class DatabaseFiller {
 	}
 	
 	public static void databaseFillerRoute() {
-		DBRoutes.getInstance().addRoute(1, 1, 7, R.drawable.rota_1_7, null);
-		DBRoutes.getInstance().addRoute(2, 8, 19, R.drawable.rota_19_8, null);
+		DBRoutes.getInstance().addRoute(1, 1, 7, R.drawable.rota_1_7, null, 1);
+		DBRoutes.getInstance().addRoute(2, 8, 19, R.drawable.rota_19_8, null, 1);
 	}
 
 }

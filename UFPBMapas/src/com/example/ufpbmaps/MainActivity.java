@@ -2,6 +2,8 @@ package com.example.ufpbmaps;
 
 import java.util.StringTokenizer;
 
+import dbclasses.DataHandler;
+
 import entities.DBLandmark;
 import entities.DatabaseFiller;
 import entities.Landmark;
@@ -41,6 +43,10 @@ public class MainActivity extends Activity {
 				initiatePopupWindow(); 
 			} 
 		});
+		
+		DataHandler h = new DataHandler(getApplicationContext());
+		h.open();
+		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();
 			DatabaseFiller.databaseFillerRoute();

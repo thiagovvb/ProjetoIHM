@@ -1,7 +1,6 @@
 package entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 @SuppressWarnings("serial")
 public class Route implements Serializable {
@@ -9,16 +8,26 @@ public class Route implements Serializable {
 	private int sourceId; //Primary Key A
 	private int destinationId; //Primary Key B
 	private int map;
+	private int dist;
 	private String instruction;
 	
-	public Route(int id, int sourceId, int destinationId, int map, String instruction) {
+	public Route(int id, int sourceId, int destinationId, int map, String instruction, int distance) {
 		this.id = id;
 		this.sourceId = sourceId;
 		this.destinationId = destinationId;
 		this.map = map;
 		this.instruction = instruction;
+		this.dist = dist;
 	}
 
+	public int getDist(){
+		return dist;
+	}
+	
+	public void setDist(int dist){
+		this.dist = dist;
+	}
+	
 	public int getId() {
 		return id;
 	}
