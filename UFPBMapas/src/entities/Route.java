@@ -11,7 +11,7 @@ public class Route implements Serializable {
 	private int dist;
 	private String instruction;
 	
-	public Route(int id, int sourceId, int destinationId, int map, String instruction, int dist) {
+	public Route(int id, int sourceId, int destinationId, int map, String instruction, int distance) {
 		this.id = id;
 		this.sourceId = sourceId;
 		this.destinationId = destinationId;
