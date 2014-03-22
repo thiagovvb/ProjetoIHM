@@ -3,6 +3,7 @@ package com.example.ufpbmaps;
 import java.util.StringTokenizer;
 
 import dbclasses.DataHandler;
+import dbclasses.LandmarkEntity;
 
 import entities.DBLandmark;
 import entities.DatabaseFiller;
@@ -13,6 +14,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -47,7 +49,8 @@ public class MainActivity extends Activity {
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
 		h.insertLandmark("0", "ABC", "Entrada", "Ah oi", "Ah oi");
-		h.fetchLandmark(0);
+		Cursor c = h.fetchLandmark(0);
+		//System.out.println(c.getCount());
 		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();

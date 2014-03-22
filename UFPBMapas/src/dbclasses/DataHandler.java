@@ -44,7 +44,7 @@ public class DataHandler {
 	
 	public Cursor fetchLandmark(int id){
 		String[] columns = new String[] {LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
-		String where = "id_landmark = " + id;
+		String where = "id = " + id;
 		return db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null);
 	}
 
