@@ -13,7 +13,7 @@ public class LandmarkEntity {
 			"create table landmark (id text not null," +
 			"acronym text not null," +
 			"name text not null," +
-			"picture text not null" +
+			"picture text not null," +
 			"description text not null);";
 	
 	
