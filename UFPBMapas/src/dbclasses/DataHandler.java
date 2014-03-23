@@ -1,6 +1,9 @@
 package dbclasses;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+
+import entities.Landmark;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -42,12 +45,37 @@ public class DataHandler {
 		return db.insertOrThrow(LandmarkEntity.TABLE_NAME, null, content);
 	}
 	
-	public Cursor fetchLandmark(int id){
-		String[] columns = new String[] {LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
+	public ArrayList<Landmark> fetchLandmark(int id){
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
 		String where = "id = " + id;
-		return db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null);
+		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null));
+	}
+	
+	public ArrayList<Landmark> fetchLandmark(){
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
+		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, null, null, null, null, null));
 	}
 
+	public ArrayList<Landmark> assembleLandmark(Cursor c){
+		
+		ArrayList<Landmark> v = new ArrayList<Landmark>();
+		
+		if(c.moveToFirst()){
+			while(!c.isAfterLast()){
+				String name = c.getString(c.getColumnIndex(LandmarkEntity.NAME));
+				String id = c.getString(c.getColumnIndex(LandmarkEntity.ID));
+				String acronym = c.getString(c.getColumnIndex(LandmarkEntity.ACRONYM));
+				String picture = c.getString(c.getColumnIndex(LandmarkEntity.PICTURE));
+				String desc = c.getString(c.getColumnIndex(LandmarkEntity.DESCRIPTION));
+				
+				Landmark l = new Landmark(Integer.parseInt(id), acronym, name, Integer.parseInt(picture), desc);
+				v.add(l);
+				
+			}
+		}
+		
+		return v;
+	}
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper{
 
