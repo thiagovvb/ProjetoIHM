@@ -35,6 +35,10 @@ public class DataHandler {
 		dbhelper.close();
 	}
 	
+	public void clearTable(String table){
+		db.execSQL("delete from " + table);
+	}
+	
 	public long insertLandmark(String id, String acronym, String name, String picture, String description){
 		ContentValues content = new ContentValues();
 		content.put(LandmarkEntity.ID, id);
@@ -60,8 +64,8 @@ public class DataHandler {
 		
 		ArrayList<Landmark> v = new ArrayList<Landmark>();
 		
-		if(c.moveToFirst()){
-			while(!c.isAfterLast()){
+		if(c.getCount() > 0){
+			while(c.moveToNext()){
 				String name = c.getString(c.getColumnIndex(LandmarkEntity.NAME));
 				String id = c.getString(c.getColumnIndex(LandmarkEntity.ID));
 				String acronym = c.getString(c.getColumnIndex(LandmarkEntity.ACRONYM));
