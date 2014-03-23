@@ -76,8 +76,8 @@ public class MainActivity extends Activity {
 		System.out.println("Instrucao da rota por dest = " + r.getInstruction());*/
 		
 		if(!dbfilled) {
-			DatabaseFiller.databaseFillerLdm();
-			DatabaseFiller.databaseFillerRoute();
+			DatabaseFiller.getInstance(getApplicationContext()).databaseFillerLdm();
+			DatabaseFiller.getInstance(getApplicationContext()).databaseFillerRoute();
 			dbfilled = true;
 		}
 	}
