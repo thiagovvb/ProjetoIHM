@@ -48,8 +48,10 @@ public class MainActivity extends Activity {
 		
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
+		h.clearTable(LandmarkEntity.TABLE_NAME);
 		h.insertLandmark("0", "ABC", "Entrada", "1", "Ah oi");
-
+		System.out.println(h.fetchLandmark(0).get(0).getName());
+		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();
 			DatabaseFiller.databaseFillerRoute();
