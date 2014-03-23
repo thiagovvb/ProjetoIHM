@@ -17,8 +17,7 @@ public class Graph {
 	private Graph() {
 		DataHandler dh = new DataHandler(context);
 		landmark = dh.fetchLandmark();
-		route = new ArrayList<Route>(); //só enquanto não coisa o bd
-		//route = dh.fetchRoute();
+		route = dh.fetchRoute();
 	}
 	
 	public static Graph getInstance() {
