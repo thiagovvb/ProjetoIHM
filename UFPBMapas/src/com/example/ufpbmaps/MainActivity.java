@@ -1,13 +1,16 @@
 package com.example.ufpbmaps;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import dbclasses.DataHandler;
 import dbclasses.LandmarkEntity;
+import dbclasses.RouteEntity;
 
 import entities.DBLandmark;
 import entities.DatabaseFiller;
 import entities.Landmark;
+import entities.Route;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
@@ -49,6 +52,28 @@ public class MainActivity extends Activity {
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
 		h.clearTable(LandmarkEntity.TABLE_NAME);
+		h.clearTable(RouteEntity.TABLE_NAME);
+		
+		/*h.insertLandmark(0, "UFPB", "Universidade Federal da Paraiba", 5, "ah oi", 1);
+		h.insertLandmark(1, "UFPE", "Universidade Federal de Pernambuco", 3, "ah oi",1);
+		h.insertLandmark(2, "UFCG", "Universidade Federal de Campina Grande", 2, "ah oi",0);
+		Landmark r1 = h.fetchLandmark(0);
+		Landmark r2 = h.fetchLandmark(1);
+		Landmark r3 = h.fetchLandmark(2);
+		
+		ArrayList<Landmark> landmarks = h.fetchLandmark();
+		ArrayList<Landmark> relevantLandmarks = h.fetchRelevantLandmarks();
+		
+		System.out.println("Nome = " + r1.getName());
+		System.out.println("Nome = " + r2.getName());
+		System.out.println("Nome = " + r3.getName());
+		System.out.println("Total = " + landmarks.size());
+		System.out.println("Relevant total = " + relevantLandmarks.size());
+		
+		
+		h.insertRoute(0, 0, 1, 3, 6, "Siga em frente");
+		Route r = h.fetchRouteByDest(1).get(0);
+		System.out.println("Instrucao da rota por dest = " + r.getInstruction());*/
 		
 		if(!dbfilled) {
 			DatabaseFiller.databaseFillerLdm();

@@ -11,9 +11,9 @@ public class RouteEntity {
 	public static final String INSTRUCTION = "instruction";
 	
 	public static final String TABLE_CREATE = 
-			"create table landmark (id_route text not null," +
-			"source_id text not null," +
-			"destination_id text not null," +
+			"create table routes (id text not null," +
+			"source text not null," +
+			"destination text not null," +
 			"map text not null," +
 			"weight text not null," +
 			"instruction text not null);";

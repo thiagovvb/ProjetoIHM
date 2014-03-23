@@ -16,7 +16,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataHandler {
 
 	public static final String DATABASE_NAME = "ufpbmaps";
-	public static final int DATABASE_VERSION = 1;
+	public static final int DATABASE_VERSION = 2;
 	
 	private DatabaseHelper dbhelper;
 	private Context ctx;
@@ -74,27 +74,34 @@ public class DataHandler {
 		return assembleRoute(db.query(RouteEntity.TABLE_NAME, columns, null, null, null, null, null));
 	}
 	
-	public long insertLandmark(int id, String acronym, String name, int picture, String description){
+	public long insertLandmark(int id, String acronym, String name, int picture, String description, int relevant){
 		ContentValues content = new ContentValues();
 		content.put(LandmarkEntity.ID, new String(id + ""));
 		content.put(LandmarkEntity.ACRONYM, acronym);
 		content.put(LandmarkEntity.NAME, name);
 		content.put(LandmarkEntity.PICTURE, new String(picture + ""));
 		content.put(LandmarkEntity.DESCRIPTION, description);
+		content.put(LandmarkEntity.RELEVANT, new String(relevant + ""));
 		return db.insertOrThrow(LandmarkEntity.TABLE_NAME, null, content);
 	}
 	
 	public Landmark fetchLandmark(int id){
-		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
 		String where = "id = " + id;
 		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null)).get(0);
 	}
 	
 	public ArrayList<Landmark> fetchLandmark(){
-		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION};
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
 		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, null, null, null, null, null));
 	}
 
+	public ArrayList<Landmark> fetchRelevantLandmarks(){
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
+		String where = "relevant = 1";
+		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null));
+	}
+	
 	public ArrayList<Landmark> assembleLandmark(Cursor c){
 		
 		ArrayList<Landmark> v = new ArrayList<Landmark>();
@@ -106,8 +113,9 @@ public class DataHandler {
 				String acronym = c.getString(c.getColumnIndex(LandmarkEntity.ACRONYM));
 				String picture = c.getString(c.getColumnIndex(LandmarkEntity.PICTURE));
 				String desc = c.getString(c.getColumnIndex(LandmarkEntity.DESCRIPTION));
+				String rele = c.getString(c.getColumnIndex(LandmarkEntity.RELEVANT));
 				
-				Landmark l = new Landmark(Integer.parseInt(id), acronym, name, Integer.parseInt(picture), desc);
+				Landmark l = new Landmark(Integer.parseInt(id), acronym, name, Integer.parseInt(picture), desc, Integer.parseInt(rele));
 				v.add(l);
 				
 			}
