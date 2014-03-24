@@ -53,7 +53,6 @@ public class MainActivity extends Activity {
 		h.open();
 		h.clearTable(LandmarkEntity.TABLE_NAME);
 		h.clearTable(RouteEntity.TABLE_NAME);
-		//h.close();
 		
 		/*h.insertLandmark(0, "UFPB", "Universidade Federal da Paraiba", 5, "ah oi", 1);
 		h.insertLandmark(1, "UFPE", "Universidade Federal de Pernambuco", 3, "ah oi",1);
@@ -77,10 +76,12 @@ public class MainActivity extends Activity {
 		System.out.println("Instrucao da rota por dest = " + r.getInstruction());*/
 		
 		if(!dbfilled) {
-			DatabaseFiller.getInstance(getApplicationContext()).databaseFillerLdm();
-			DatabaseFiller.getInstance(getApplicationContext()).databaseFillerRoute();
+			DatabaseFiller.getInstance().databaseFillerLdm(h);
+			DatabaseFiller.getInstance().databaseFillerRoute(h);
 			dbfilled = true;
 		}
+		
+		h.close();
 	}
 
 	@Override
