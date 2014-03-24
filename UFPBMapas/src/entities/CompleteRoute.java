@@ -1,12 +1,14 @@
 package entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import android.content.Context;
 
-public class CompleteRoute {
+@SuppressWarnings("serial")
+public class CompleteRoute implements Serializable {
 	private ArrayList<Route> completeRoute;
-
+	
 	public CompleteRoute(Context context) {
 		completeRoute = new ArrayList<Route>();
 	}
@@ -31,7 +33,6 @@ public class CompleteRoute {
 		Graph.getInstance().dijkstra(source, destination);
 		int j = Graph.getInstance().getDist().length;
 		int aux = destination;
-		//eu acho que este laço vai dar infinito
 		while(aux != source) {
 			for(int i = 0; i < j; i++) {
 				completeRoute.add(Graph.getInstance().getRoute(Graph.getInstance().getPrev()[aux], aux));

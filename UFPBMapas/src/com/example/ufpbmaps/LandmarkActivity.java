@@ -3,6 +3,7 @@ package com.example.ufpbmaps;
 import java.util.ArrayList;
 
 import dbclasses.DataHandler;
+import entities.CompleteRoute;
 import entities.DBLandmark;
 import entities.DBRoutes;
 import entities.Landmark;
@@ -58,22 +59,28 @@ public class LandmarkActivity extends Activity {
 		dh.close();
 	}
 	
-	private void initiateRouteActivity(Route route){
+	private void initiateRouteActivity(int source, int destination){
 		Intent intent = new Intent(this, RouteActivity.class);
-		intent.putExtra("Route", route);
+		CompleteRoute cr = new CompleteRoute(getApplicationContext());
+		cr.create(source, destination);
+		intent.putExtra("CompleteRoute", cr);
 		startActivity(intent);
 	}
 	
 	private OnClickListener abreRota = new OnClickListener() { 
 		public void onClick(View v) {
+			DataHandler dh = new DataHandler(getApplicationContext());
+			dh.open();
 			Intent intent = getIntent();
-			Landmark origem = (Landmark) intent.getSerializableExtra("Landmark");
-			//Landmark destino = DBLandmark.getInstance().getLdm(v.getId());
-			if(origem.getId() == 1 || origem.getId() == 7) {
-				initiateRouteActivity(DBRoutes.getInstance().getRoute(1));
+			Landmark source = (Landmark) intent.getSerializableExtra("Landmark");
+			Landmark destination;
+			if(v.getId() < source.getId()){
+				destination = dh.fetchLandmark(v.getId());
 			} else {
-				initiateRouteActivity(DBRoutes.getInstance().getRoute(2));
+				destination = dh.fetchLandmark(v.getId() + 1);
 			}
+			dh.close();
+			initiateRouteActivity(source.getId(), destination.getId());
 		}
 	};
 	
