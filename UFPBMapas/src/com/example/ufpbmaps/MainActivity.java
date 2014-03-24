@@ -53,7 +53,7 @@ public class MainActivity extends Activity {
 		h.open();
 		h.clearTable(LandmarkEntity.TABLE_NAME);
 		h.clearTable(RouteEntity.TABLE_NAME);
-		h.close();
+		//h.close();
 		
 		/*h.insertLandmark(0, "UFPB", "Universidade Federal da Paraiba", 5, "ah oi", 1);
 		h.insertLandmark(1, "UFPE", "Universidade Federal de Pernambuco", 3, "ah oi",1);

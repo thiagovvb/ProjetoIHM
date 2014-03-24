@@ -24,7 +24,7 @@ public class DataHandler {
 	
 	public DataHandler(Context ctx){
 		this.ctx = ctx;
-		dbhelper = new DatabaseHelper(ctx);
+		dbhelper = DatabaseHelper.getInstance(ctx);
 	}
 	
 	public boolean isFilled(){
@@ -38,6 +38,10 @@ public class DataHandler {
 	
 	public void close(){
 		dbhelper.close();
+	}
+	
+	public boolean isOpen(){
+		return db.isOpen();
 	}
 	
 	public void clearTable(String table){
@@ -151,9 +155,18 @@ public class DataHandler {
 	}
 	
 	private static class DatabaseHelper extends SQLiteOpenHelper{
+		
+		private static DatabaseHelper sInstance = null;
 
-		public DatabaseHelper(Context ctx){
+		private DatabaseHelper(Context ctx){
 			super(ctx,DATABASE_NAME,null,DATABASE_VERSION);
+		}
+		
+		public static DatabaseHelper getInstance(Context ctx){
+			if(sInstance == null){
+				sInstance = new DatabaseHelper(ctx.getApplicationContext());
+			}
+			return sInstance;
 		}
 
 		@Override

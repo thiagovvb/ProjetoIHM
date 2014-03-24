@@ -88,7 +88,7 @@ public class DatabaseFiller {
 		dh.insertLandmark(++id, "Rotatória ao lado do CCHLA", "Rotatória ao lado do CCHLA", R.drawable.sem_imagem, " ", 0);
 		dh.insertLandmark(++id, "Rotatória próxima ao Setor Esportivo", "Rotatória próxima ao Setor Esportivo", R.drawable.sem_imagem, " ", 0);//*/
 		
-		dh.close();
+		//if(dh.isOpen()) dh.close();
 		ArrayList<Landmark> a = dh.fetchLandmark();
 		for(int i = 0; i < a.size(); i++){
 			System.out.println("Nome = " + a.get(i).getName() + " ID = " + a.get(i).getId());
@@ -304,7 +304,7 @@ public class DatabaseFiller {
 		dh.insertRoute(id, 32, 31, map, 177, instruction);
 		dh.insertRoute(id, 22, 16, map, 169, instruction); 
 		
-		dh.close();
+		//if(dh.isOpen()) dh.close();
 
 	}
 
