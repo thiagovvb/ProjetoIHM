@@ -107,47 +107,58 @@ public class Graph {
 		return prev.length;
 	}
 	
+	public ArrayList<Integer> getConnectedTo(int id) {
+		ArrayList<Integer> con = new ArrayList<Integer>();
+		for(Route r : route) {
+			if(r.getSourceId() == id) {
+				con.add(r.getDestinationId());
+			}
+		}
+		return con;
+	}
+		
 	public String toString() {
 		return "Grafo com " + route.size() + " rotas.";
 	}
 	
-	public void dijkstra(int source, int destination) {
-		System.out.println("Começou Dijkstra, source = " + source + " e dest = " + destination);
+	public void dijkstra(int source) {
+		System.out.println("Começou Dijkstra, source = " + source);
+		int[] ids = new int[landmark.size()];
 		dist = new int[landmark.size()];
-		System.out.println("DIST SIZE = " + dist.length);
-		System.out.println("Gerou dist com size = " + landmark.size());
 		prev = new int[landmark.size()];
-		System.out.println("Gerou prev");
 		ArrayList<Integer> q = new ArrayList<Integer>();
-		System.out.println("Gerou q");
+		
 		for (Landmark l : landmark) {
+			ids[l.getId() - 1] = l.getId();
 			dist[l.getId() - 1] = Integer.MAX_VALUE;
 			prev[l.getId() - 1] = -1;
-			q.add(l.getId() - 1);
+			q.add(l.getId());
 		}
-		System.out.println("Preencheu dist, prev e q");
-		dist[source] = 0;
-		System.out.println("Dist 0 é 0");
-		while(q.size() == 0) {
+		
+		dist[source-1] = 0;
+				
+		while(q.size() > 0) {
 			int i = -1;
 			int u = Integer.MAX_VALUE;
-			for(Route r : route){
-				u = Math.min(u, r.getDist());
-				if(r.getDist() <= u)
-					i = r.getSourceId();
+			for(int j = 0; j < dist.length; j++){
+				if(dist[j] < u) {
+					i = j+1;
+					u = dist[j];
+				}
 			}
+			
 			q.remove(i-1);
+			
 			if(dist[i-1] == Integer.MAX_VALUE)
 				break;
-			for(Route r : route){
-				if(r.getSourceId() == i){
-					int v = r.getDestinationId();
-					int alt = dist[i-1] + r.getDist();
-					if(alt < dist[v-1]) {
-						dist[v-1] = alt;
-						prev[v-1] = u;
-						q.remove(v-1);
-					}
+			
+			ArrayList<Integer> connected = getConnectedTo(i);
+			
+			for(Integer v : connected){
+				int alt = dist[i-1] + getRoute(i, v).getDist();
+				if(alt < dist[v-1]) {
+					dist[v-1] = alt;
+					prev[v-1] = i;
 				}
 			}
 		}

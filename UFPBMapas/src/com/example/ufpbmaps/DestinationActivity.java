@@ -3,7 +3,6 @@ package com.example.ufpbmaps;
 import java.util.ArrayList;
 
 import dbclasses.DataHandler;
-import entities.DBLandmark;
 import entities.Landmark;
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -4,10 +4,7 @@ import java.util.ArrayList;
 
 import dbclasses.DataHandler;
 import entities.CompleteRoute;
-import entities.DBLandmark;
-import entities.DBRoutes;
 import entities.Landmark;
-import entities.Route;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;

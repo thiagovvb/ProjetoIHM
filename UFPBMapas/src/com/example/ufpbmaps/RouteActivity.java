@@ -10,9 +10,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import entities.CompleteRoute;
-import entities.DBLandmark;
 import entities.Graph;
-import entities.Route;
 
 public class RouteActivity extends Activity {
 	private int idInRoute;

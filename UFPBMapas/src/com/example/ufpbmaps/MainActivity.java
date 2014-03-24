@@ -1,23 +1,16 @@
 package com.example.ufpbmaps;
 
-import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 import dbclasses.DataHandler;
-import dbclasses.LandmarkEntity;
-import dbclasses.RouteEntity;
-
-import entities.DBLandmark;
 import entities.DatabaseFiller;
 import entities.Landmark;
-import entities.Route;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;

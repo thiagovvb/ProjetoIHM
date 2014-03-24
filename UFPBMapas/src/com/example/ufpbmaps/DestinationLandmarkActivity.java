@@ -21,10 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import entities.CompleteRoute;
-import entities.DBLandmark;
-import entities.DBRoutes;
 import entities.Landmark;
-import entities.Route;
 
 public class DestinationLandmarkActivity extends Activity {
 
