@@ -29,6 +29,8 @@ public class DestinationActivity extends Activity {
 		
 		ArrayList<Landmark> array = dh.fetchRelevantLandmarks();
 		
+		System.out.println("Tamanho do Array = " + array.size());
+		
 		for(int j = 1; j <= array.size(); j++){
 			Button destination = new Button(this);
 			destination.setId(j);

@@ -148,12 +148,19 @@ public class MainActivity extends Activity {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
+			
+			DataHandler db = new DataHandler(getApplicationContext());
+			db.open();
+			
 			QRCode = intent.getStringExtra("SCAN_RESULT");
 
 			int key = Integer.parseInt(accessCode());
-			Landmark landmark = DBLandmark.getInstance().getLdm(key);
+			Landmark landmark = db.fetchLandmark(key);
 			Intent intent2 = new Intent(this, LandmarkActivity.class);
 			intent2.putExtra("Landmark", landmark);
+			
+			db.close();
+			
 			startActivity(intent2);			
 		}
 	}
