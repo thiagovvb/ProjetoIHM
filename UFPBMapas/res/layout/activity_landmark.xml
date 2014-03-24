@@ -43,7 +43,7 @@
         android:paddingTop="10dp"
         android:text="@string/landmark_button_list"
         android:textColor="#ffffff"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
 
     <ScrollView
         android:id="@+id/buttonLandmarkScrollView"
