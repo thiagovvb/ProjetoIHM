@@ -1,5 +1,8 @@
 package com.example.ufpbmaps;
 
+import java.util.ArrayList;
+
+import dbclasses.DataHandler;
 import entities.DBLandmark;
 import entities.Landmark;
 import android.app.Activity;
@@ -19,20 +22,33 @@ public class DestinationActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_destination);
 				
-		LinearLayout l1 = (LinearLayout)findViewById(R.id.buttonLinearLayout);		
-		for(int j = 1; j <= 23; j++){
+		LinearLayout l1 = (LinearLayout)findViewById(R.id.buttonLinearLayout);
+		
+		DataHandler dh = new DataHandler(getApplicationContext());
+		dh.open();
+		
+		ArrayList<Landmark> array = dh.fetchRelevantLandmarks();
+		
+		for(int j = 1; j <= array.size(); j++){
 			Button destination = new Button(this);
 			destination.setId(j);
-			destination.setText(DBLandmark.getInstance().getLdm(j).getName());
+			destination.setText(array.get(j-1).getName());
 			destination.setOnClickListener(destination_button_click_listener);
 			l1.addView(destination);
 		}
+		
+		dh.close();
 	}
 	
 	public void initiateDestinationLandmark(int viewId) {
+		DataHandler dh = new DataHandler(getApplicationContext());
+		dh.open();
+		
 		Intent intent = new Intent(this, DestinationLandmarkActivity.class);
-		Landmark destination = DBLandmark.getInstance().getLdm(viewId);
+		Landmark destination = dh.fetchLandmark(viewId);
 		intent.putExtra("Landmark", destination);
+		
+		dh.close();
 		startActivity(intent);
 	}
 	
