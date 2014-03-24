@@ -1,6 +1,9 @@
 package com.example.ufpbmaps;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import dbclasses.DataHandler;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -26,6 +29,10 @@ public class DestinationLandmarkActivity extends Activity {
 
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
+		
+		DataHandler dh = new DataHandler(getApplicationContext());
+		dh.open();
+		
 		setContentView(R.layout.activity_destinationlandmark);
 		
 		Intent intent = getIntent();
@@ -47,15 +54,20 @@ public class DestinationLandmarkActivity extends Activity {
 		destination.setText(R.string.qrcode_button);
 		destination.setOnClickListener(lerQR);
 		l1.addView(destination);
-		for(int j = 1; j <= 23; j++){
+		
+		ArrayList<Landmark> al = dh.fetchLandmark();
+		
+		for(int j = 1; j <= al.size(); j++){
 			if(j != landmark.getId()){
 				destination = new Button(this);
 				destination.setId(j);
-				destination.setText(DBLandmark.getInstance().getLdm(j).getName());
+				destination.setText(al.get(j-1).getName());
 				destination.setOnClickListener(abreRota);
 				l1.addView(destination);
 			}
 		}
+		
+		dh.close();
 	}
 	
 	private void initiateRouteActivity(Route route){
@@ -149,11 +161,17 @@ public class DestinationLandmarkActivity extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
 			QRCode = intent.getStringExtra("SCAN_RESULT");
+			
+			DataHandler dh = new DataHandler(getApplicationContext());
+			dh.open();
 
 			int key = Integer.parseInt(accessCode());
-			Landmark landmark = DBLandmark.getInstance().getLdm(key);
+			Landmark landmark = dh.fetchLandmark(key);
 			Intent intent2 = new Intent(this, LandmarkActivity.class);
 			intent2.putExtra("Landmark", landmark);
+			
+			dh.close();
+			
 			startActivity(intent2);			
 		}
 	}

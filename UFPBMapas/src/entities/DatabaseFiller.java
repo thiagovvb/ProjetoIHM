@@ -31,24 +31,24 @@ public class DatabaseFiller {
 		dh.open();
 		int id = 0;
 		//Landmarks Relevantes
-		dh.insertLandmark(++id, "CA", "Central de Aulas", R.drawable.ca, "Conjunto com  blocos de salas de aula.", 1);
+		dh.insertLandmark(++id, "CA", "Central de Aulas", R.drawable.img_ca, "Conjunto com  blocos de salas de aula.", 1);
 		dh.insertLandmark(++id, "CT", "Centro de Tecnologia", R.drawable.sem_imagem, "Neste centro estão os departamentos de " +
 				"Arquitetura, Engenharia de Alimentos, Engenharia de Materiais, Engenharia de Produção, Engenharia Civil e " +
 				"Ambiental, Engenharia Mecânica e Engenharia Química.", 1);
-		dh.insertLandmark(++id, "CCSA", "Centro de Ciências Sociais Aplicadas", R.drawable.ccsa, "Neste centro estão os departamentos de " +
+		dh.insertLandmark(++id, "CCSA", "Centro de Ciências Sociais Aplicadas", R.drawable.img_ccsa, "Neste centro estão os departamentos de " +
 				"Administração, Ciências da Informação, Economia, Finanças e Contabillidade, e de Relações Internacionais.", 1);
-		dh.insertLandmark(++id, "CE", "Centro de Educação", R.drawable.ce, "Neste centro estão os departamentos de " +
+		dh.insertLandmark(++id, "CE", "Centro de Educação", R.drawable.img_ce, "Neste centro estão os departamentos de " +
 				"Fundamentação da Educação, Habilitação Pedagógica, Metodologia da Educação, Psicopedagogia e Ciências das " +
 				"Religiões.", 1);
-		dh.insertLandmark(++id, "CCHLA", "Centro de Ciências Humanas, Letras e Artes", R.drawable.cchla, "Neste centro estão os departamentos de " +
+		dh.insertLandmark(++id, "CCHLA", "Centro de Ciências Humanas, Letras e Artes", R.drawable.img_cchla, "Neste centro estão os departamentos de " +
 				"Ciências Sociais, Filosofia, História, Letras Clássicas e Vernáculas, Letras Estrangeiras Modernas, Midias Digitais, Psicologia " +
 				"e Serviço Social.", 1);
-		dh.insertLandmark(++id, "Centro de Vivência", "Centro de Vivência", R.drawable.centro_de_vivencia, "Neste local pode-se adicionar créditos ao passe legal, " +
+		dh.insertLandmark(++id, "Centro de Vivência", "Centro de Vivência", R.drawable.img_centro_de_vivencia, "Neste local pode-se adicionar créditos ao passe legal, " +
 				"e solicitar sua carteira de estudante. ", 1);
-		dh.insertLandmark(++id, "Biblioteca Central", "Biblioteca Central", R.drawable.biblio_central, "Principal biblioteca da Universidade Federal da Paraíba.", 1);
-		dh.insertLandmark(++id, "CCEN", "Centro de Ciências Exatas e da Natureza", R.drawable.biblio_ccen, "Neste centro estão os departamentos de " +
+		dh.insertLandmark(++id, "Biblioteca Central", "Biblioteca Central", R.drawable.img_biblio_central, "Principal biblioteca da Universidade Federal da Paraíba.", 1);
+		dh.insertLandmark(++id, "CCEN", "Centro de Ciências Exatas e da Natureza", R.drawable.img_biblio_ccen, "Neste centro estão os departamentos de " +
 				"Biologia Molecular, Geociências, Sistematica e Ecologia, Estatística, Física, Matemática e Quimica. Bem como o NEPREMAR.", 1);
-		dh.insertLandmark(++id, "Reitoria", "Reitoria da UFPB", R.drawable.reitoria, "Central Administrativa da Universidade Federal da Paraíba.", 1);
+		dh.insertLandmark(++id, "Reitoria", "Reitoria da UFPB", R.drawable.img_reitoria, "Central Administrativa da Universidade Federal da Paraíba.", 1);
 		dh.insertLandmark(++id, "Setor Esportivo", "Setor Esportivo", R.drawable.sem_imagem, "Área destina ao cursos de Licenciatura em Educação Física.", 1);
 		dh.insertLandmark(++id, "CCS", "Centro de Ciências da Saúde", R.drawable.sem_imagem, "Neste centro estão os departamentos de " +
 				"Ciências Farmaceuticas, Clínica e Odontologia Social, Educação Física, Enfermagem Clínica, Fisiologia e Patologia, Enfermagem, Saúde Pública " +
@@ -60,18 +60,18 @@ public class DatabaseFiller {
 		dh.insertLandmark(++id, "Residência Universitária", "Residência Universitária", R.drawable.sem_imagem, "Condomínio onde residem os estudantes que não possuem família " +
 				"na cidade de João Pessoa.", 1);
 		dh.insertLandmark(++id, "Setor de Vigilância", "Setor de Vigilância", R.drawable.sem_imagem, " ", 1);
-		dh.insertLandmark(++id, "CODISMA", "Cooperativa Cultural Universitária da Paraíba Ltda", R.drawable.codisma, " ", 1);
+		dh.insertLandmark(++id, "CODISMA", "Cooperativa Cultural Universitária da Paraíba Ltda", R.drawable.img_codisma, " ", 1);
 		dh.insertLandmark(++id, "Resturante Universitário", "Resturante Universitário", R.drawable.sem_imagem, "Local designado à alimentação dos alunos.", 1);
 		dh.insertLandmark(++id, "CI", "Centro de Informática", R.drawable.sem_imagem, "Neste centro estão os departamentos de " +
 				"Computação Científica, Informática e Sistema de Computação.", 1);
 		dh.insertLandmark(++id, "Caixa", "Caixa Econômica Federal", R.drawable.sem_imagem, " ", 1);
-		dh.insertLandmark(++id, "UFPB Virtual", "UFPB Virtual", R.drawable.ufpb_virtual, "Local destinado à gerência dos cursos à distância.", 1);
+		dh.insertLandmark(++id, "UFPB Virtual", "UFPB Virtual", R.drawable.img_ufpb_virtual, "Local destinado à gerência dos cursos à distância.", 1);
 		dh.insertLandmark(++id, "BB", "Banco do Brasil", R.drawable.sem_imagem, "", 1);
 		dh.insertLandmark(++id, "CEAR", "Centro de Energias e Alternativas Renováveis", R.drawable.sem_imagem, "Neste centro estão os departamentos " +
 				"de Energia Elétrica e Energias Renováveis.", 1);
 		dh.insertLandmark(++id, "CCTA", "Centro de Comunicação, Turismo e Artes", R.drawable.sem_imagem, "Neste centro estão os departamentos de " +
 				"Artes Cênicas, Artes Visuais, Comunicação e Turismo, Educação Musical e Música", 1);
-		dh.insertLandmark(++id, "CCJ", "Centro de Ciências Jurídicas", R.drawable.ccj, "Neste centro estão os departamentos de " +
+		dh.insertLandmark(++id, "CCJ", "Centro de Ciências Jurídicas", R.drawable.img_ccj, "Neste centro estão os departamentos de " +
 				"Direito Privado, Direito Público e Direito Processual e Prática Jurídica.", 1);
 		dh.insertLandmark(++id, "Lando", "Lanchonete do Lando", R.drawable.sem_imagem, "Lanchonete próxima ao departamento de Física.", 1);
 		dh.insertLandmark(++id, "CEB", "Cantina Elefante Branco", R.drawable.sem_imagem, "Lanchonete próxima ao departamento de Odontologia.", 1);
@@ -82,7 +82,7 @@ public class DatabaseFiller {
 		dh.insertLandmark(++id, "Concert Hall", "Concert Hall Radegundis Feitosa", R.drawable.sem_imagem, " ", 1);
 		dh.insertLandmark(++id, "Santander", "Banco Santander", R.drawable.sem_imagem, " ", 1);
 		dh.insertLandmark(++id, "DQ, DG e DCN", "Departamentos de Química, Geografia e Ciências Naturais", R.drawable.sem_imagem, " ", 1);
-		dh.insertLandmark(++id, "DM, DF e DE", "Departamentos de Matemática, Física e Estatística", R.drawable.dm, " ", 1);
+		dh.insertLandmark(++id, "DM, DF e DE", "Departamentos de Matemática, Física e Estatística", R.drawable.img_dm, " ", 1);
 
 		//Landmarks não relevantes
 		dh.insertLandmark(++id, "Rotatória ao lado do CCHLA", "Rotatória ao lado do CCHLA", R.drawable.sem_imagem, " ", 0);
