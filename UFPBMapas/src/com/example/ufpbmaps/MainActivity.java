@@ -51,9 +51,10 @@ public class MainActivity extends Activity {
 		
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
-		h.clearTable(LandmarkEntity.TABLE_NAME);
-		h.clearTable(RouteEntity.TABLE_NAME);
+		//h.clearTable(LandmarkEntity.TABLE_NAME);
+		//h.clearTable(RouteEntity.TABLE_NAME);
 		
+		 
 		/*h.insertLandmark(0, "UFPB", "Universidade Federal da Paraiba", 5, "ah oi", 1);
 		h.insertLandmark(1, "UFPE", "Universidade Federal de Pernambuco", 3, "ah oi",1);
 		h.insertLandmark(2, "UFCG", "Universidade Federal de Campina Grande", 2, "ah oi",0);
@@ -75,7 +76,9 @@ public class MainActivity extends Activity {
 		Route r = h.fetchRouteByDest(1).get(0);
 		System.out.println("Instrucao da rota por dest = " + r.getInstruction());*/
 		
-		if(!dbfilled) {
+		System.out.println("dbfilled = " + dbfilled + " isFilled" + h.isFilled());
+		
+		if(!dbfilled && !h.isFilled()) {
 			DatabaseFiller.getInstance().databaseFillerLdm(h);
 			DatabaseFiller.getInstance().databaseFillerRoute(h);
 			dbfilled = true;
