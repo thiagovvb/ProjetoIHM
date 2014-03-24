@@ -27,6 +27,10 @@ public class DataHandler {
 		dbhelper = new DatabaseHelper(ctx);
 	}
 	
+	public boolean isFilled(){
+		return fetchLandmark().size() > 0;	
+	}
+	
 	public DataHandler open(){
 		db = dbhelper.getWritableDatabase();
 		return this;
