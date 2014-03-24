@@ -30,7 +30,7 @@ public class Graph {
 	
 	public static Graph getInstance() {
 		if(uniqueInstance == null)
-			return new Graph();
+			uniqueInstance = new Graph();
 		return uniqueInstance;
 	}
 
@@ -95,8 +95,16 @@ public class Graph {
 		return dist;
 	}
 	
+	public int getDistSize(){
+		return dist.length;
+	}
+	
 	public int[] getPrev() {
 		return prev;
+	}
+	
+	public int getPrevSize(){
+		return prev.length;
 	}
 	
 	public String toString() {
@@ -104,17 +112,18 @@ public class Graph {
 	}
 	
 	public void dijkstra(int source, int destination) {
-		System.out.println("Começou Dijkstra");
+		System.out.println("Começou Dijkstra, source = " + source + " e dest = " + destination);
 		dist = new int[landmark.size()];
-		System.out.println("Gerou dist");
+		System.out.println("DIST SIZE = " + dist.length);
+		System.out.println("Gerou dist com size = " + landmark.size());
 		prev = new int[landmark.size()];
 		System.out.println("Gerou prev");
 		ArrayList<Integer> q = new ArrayList<Integer>();
 		System.out.println("Gerou q");
 		for (Landmark l : landmark) {
-			dist[l.getId()] = Integer.MAX_VALUE;
-			prev[l.getId()] = -1;
-			q.set(l.getId(), l.getId());
+			dist[l.getId() - 1] = Integer.MAX_VALUE;
+			prev[l.getId() - 1] = -1;
+			q.add(l.getId() - 1);
 		}
 		System.out.println("Preencheu dist, prev e q");
 		dist[source] = 0;
@@ -127,17 +136,17 @@ public class Graph {
 				if(r.getDist() <= u)
 					i = r.getSourceId();
 			}
-			q.remove(i);
-			if(dist[i] == Integer.MAX_VALUE)
+			q.remove(i-1);
+			if(dist[i-1] == Integer.MAX_VALUE)
 				break;
 			for(Route r : route){
 				if(r.getSourceId() == i){
 					int v = r.getDestinationId();
-					int alt = dist[i] + r.getDist();
-					if(alt < dist[v]) {
-						dist[v] = alt;
-						prev[v] = u;
-						q.remove(v);
+					int alt = dist[i-1] + r.getDist();
+					if(alt < dist[v-1]) {
+						dist[v-1] = alt;
+						prev[v-1] = u;
+						q.remove(v-1);
 					}
 				}
 			}
