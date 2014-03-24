@@ -122,14 +122,18 @@ public class Graph {
 	}
 	
 	public void dijkstra(int source) {
+		
 		System.out.println("Começou Dijkstra, source = " + source);
+		
 		int[] ids = new int[landmark.size()];
 		dist = new int[landmark.size()];
 		prev = new int[landmark.size()];
+		boolean[] vis = new boolean[landmark.size()];
 		ArrayList<Integer> q = new ArrayList<Integer>();
 		
 		for (Landmark l : landmark) {
 			ids[l.getId() - 1] = l.getId();
+			vis[l.getId() - 1] = false;
 			dist[l.getId() - 1] = Integer.MAX_VALUE;
 			prev[l.getId() - 1] = -1;
 			q.add(l.getId());
@@ -141,13 +145,14 @@ public class Graph {
 			int i = -1;
 			int u = Integer.MAX_VALUE;
 			for(int j = 0; j < dist.length; j++){
-				if(dist[j] < u) {
+				if(!vis[j] && dist[j] < u) {
 					i = j+1;
 					u = dist[j];
 				}
 			}
 			
 			q.remove(i-1);
+			vis[i-1] = true;
 			
 			if(dist[i-1] == Integer.MAX_VALUE)
 				break;
@@ -161,7 +166,10 @@ public class Graph {
 					prev[v-1] = i;
 				}
 			}
+			
 		}
+		
 		System.out.println("Acabou Dijkstra");
+		
 	}
 }
