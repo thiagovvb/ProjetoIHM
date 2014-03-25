@@ -118,7 +118,7 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 22, 18, R.drawable.rota_cta_caixa, 170, "Siga em frente paralelamente à reserva\nAo final da rua, o prédio estará à sua frente");
 		dh.insertRoute(++id, 34, 18, R.drawable.rota_caixa_rotatoria, 255, "Siga beirando os limites do campus até a passarela coberta\nSiga em frente até a rotatória");
 		dh.insertRoute(++id, 27, 18, R.drawable.rota_baratao_caixa, 148, "Siga até a saída da rua\nEntre à direita\nO prédio estará na sua direita");
-		dh.insertRoute(++id, 28, 14, R.drawable.rota_tvufpb_setordevigilancia, 164, "De costas para o prédio, siga à sua esquerda\nO prédio estará à sua esquerda");
+		dh.insertRoute(++id, 28, 14, R.drawable.rota_setordevigilancia_tvufpb, 164, "De costas para o prédio, siga à sua esquerda\nO prédio estará à sua esquerda");
 		dh.insertRoute(++id, 14, 35, R.drawable.rota_setordevigilancia_rotatoria, 127, "De costas para o prédio, siga à sua esquerda\nA rotatória estatrá logo à frente");
 		dh.insertRoute(++id, 35, 9, R.drawable.rota_reitoria_rotatoria, 110, "De costas à entrada do campus, siga em frente\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 35, 10, R.drawable.rota_setoresportivo_rotatoria, 167, "De costas para a entrada do campus, siga à esquerda\nA entrada estará à sua esquerda");
@@ -127,14 +127,14 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 16, 20, R.drawable.rota_bb_ru, 116, "Siga a calçada, passando pelo Centro de Vivência\nO prédio estará à sua esquerda");
 		dh.insertRoute(++id, 6, 20, R.drawable.rota_bb_centrodevivencia, 77, "Dentro do Centro de Vivências, desça as escadas\nSiga em frente\nNa saída à sua direita, siga à esquerda\nO prédio estará à sua esquerda");
 		dh.insertRoute(++id, 20, 7, R.drawable.rota_bb_bibliotecacentral, 44, "Atravesse a rua\nO prédio estará à sua frente");
-		dh.insertRoute(++id, 7, 31, R.drawable.rota_bibliotecacentral_bb, 136, "De costas para o prédio, siga à direita\nO prédio estará à sua frente");
-		dh.insertRoute(++id, 31, 29, R.drawable.rota_santander_bibliotecacentral, 107, "De costas para o prédio, siga em frente até chegar à rua\nVire à direita\nO prédio estará à sua direita");
-		dh.insertRoute(++id, 7, 29, R.drawable.rota_nti_santander, 165, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
+		dh.insertRoute(++id, 7, 31, R.drawable.rota_santander_bibliotecacentral, 136, "De costas para o prédio, siga à direita\nO prédio estará à sua frente");
+		dh.insertRoute(++id, 31, 29, R.drawable.rota_nti_santander, 107, "De costas para o prédio, siga em frente até chegar à rua\nVire à direita\nO prédio estará à sua direita");
+		dh.insertRoute(++id, 7, 29, R.drawable.rota_santander_bibliotecacentral, 165, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 29, 26, R.drawable.rota_nti_goledafruta, 74, "De costas ao prédio, entre à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 26, 19, R.drawable.rota_goledafruta_ufpbvirtual, 69, "Atravesse a rua\nVire à esquerda\nEntre à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 29, 19, R.drawable.rota_nti_ufpbvirtual, 64, "De costas para o prédio, siga em frente\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 19, 10, R.drawable.rota_ufpbvirtual_setoresportivo, 240, "De costas para o prédio, siga à direita\nEntre à sua direita\nSiga em frente\nA entrada estará à sua esquerda");
-		dh.insertRoute(++id, 26, 25, R.drawable.rota_goledafruta_ceb, 276, "De costas para a lanchonete, siga à direita\nMais à frente, o prédio estará à sua esquerda");
+		dh.insertRoute(++id, 26, 25, R.drawable.rota_ceb_goledafruta, 276, "De costas para a lanchonete, siga à direita\nMais à frente, o prédio estará à sua esquerda");
 		dh.insertRoute(++id, 10, 25, R.drawable.rota_ceb_setoresportivo, 413, "De costas para a entrada, siga à esquerda\nEntre na primeira à direita\nSiga até o final da rua\nEntre à esquerda\nO prédio estará à sua esquerda");
 		dh.insertRoute(++id, 10, 13, R.drawable.rota_residencia_setoresportivo, 361, "De costas para a entrada, siga à esquerda\nNo fim da rua, o prédio estará à sua esquerda");
 		dh.insertRoute(++id, 25, 11, R.drawable.rota_ccs_ceb, 126, "De costas para o prédio, siga à esquerda\nOs prédios estarão à sua direita");
@@ -144,10 +144,10 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 1, 24, R.drawable.rota_ca_lando, 145, "Certifique-se que está no começo do Bloco A\n Acompanhe-o até o estacionamento ao final do bloco\nA lanchonete estará à sua frente");
 		dh.insertRoute(++id, 24, 17, R.drawable.rota_ci_lando, 111, "De costas à saída para a rua, siga à esquerda\nMais à frente, o prédio estará à sua esquerda");
 		dh.insertRoute(++id, 17, 33, R.drawable.rota_ci_dmdfde, 54, "De costas para o prédio, siga à esquerda\nO prédio estará à sua frente");
-		dh.insertRoute(++id, 33, 8, R.drawable.rota_dmdfde_ccen, 51, "De costas para o prédio, siga à esquerda\nVocê chegará na região do Centro");
+		dh.insertRoute(++id, 33, 8, R.drawable.rota_ccen_dmdfde, 51, "De costas para o prédio, siga à esquerda\nVocê chegará na região do Centro");
 		dh.insertRoute(++id, 8, 32, R.drawable.rota_ccen_dqdgdcn, 170, "De costas para a Biblioteca Setorial, siga em frente\nOs prédios estarão à sua direita");
 		dh.insertRoute(++id, 32, 31, R.drawable.rota_santander_dqdg_dcn, 177, "Siga a pista curvilínea\nO prédio estará à sua direita");
-		dh.insertRoute(++id, 22, 16, R.drawable.rota_cta_ru, 169, "De costas para o prédio, siga à direita\nAo final da rua, entre à esquerda\n Mais à frente, o prédio estará à sua esquerda");		
+		dh.insertRoute(++id, 22, 16, R.drawable.rota_ru_cta, 169, "De costas para o prédio, siga à direita\nAo final da rua, entre à esquerda\n Mais à frente, o prédio estará à sua esquerda");		
 		
 		//Invertendo
 		
@@ -170,7 +170,7 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 18, 22, R.drawable.rota_cta_caixa, 170, "Siga à rua em frente ao prédio\nO conjunto de prédios estará à sua direita");
 		dh.insertRoute(++id, 18, 34, R.drawable.rota_caixa_rotatoria, 255, "De costas à entrada da UFPB, entre à esquerda\nSiga a passarela coberta\nEntre a direita\nO prédio estará à sua esquerda, em frente ao estacionamento");
 		dh.insertRoute(++id, 18, 27, R.drawable.rota_baratao_caixa, 148, "Siga em frente na rua principal\nEntre à esquerda na primeira esquina");
-		dh.insertRoute(++id, 14, 28, R.drawable.rota_tvufpb_setordevigilancia, 164, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
+		dh.insertRoute(++id, 14, 28, R.drawable.rota_setordevigilancia_tvufpb, 164, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 35, 14, R.drawable.rota_setoresportivo_rotatoria, 127, "De costas para a entrada do campus, siga à sua direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 9, 35, R.drawable.rota_reitoria_rotatoria, 110, "De costas para o prédio, siga à esquerda\nA rotatória estará logo à frente");
 		dh.insertRoute(++id, 10, 35, R.drawable.rota_setoresportivo_rotatoria, 167, "De costas para a entrada, siga à direita\nA rotatória estará logo à frente");
@@ -186,7 +186,7 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 19, 26, R.drawable.rota_goledafruta_ufpbvirtual, 69, "De costas para o prédio, vire à esquerda\nO prédio estará à sua esquerda");
 		dh.insertRoute(++id, 19, 29, R.drawable.rota_nti_ufpbvirtual, 64, "De costas para o prédio, siga à esquerda\nO prédio estará à sua frente");
 		dh.insertRoute(++id, 10, 19, R.drawable.rota_ufpbvirtual_setoresportivo, 240, "De costas para a entrada, siga à direita\nEntre à esquerda na primeira rua\nSiga em frente\nO prédio estará à sua esquerda");
-		dh.insertRoute(++id, 25, 26, R.drawable.rota_goledafruta_ceb, 276, "De costas para o prédio, siga à direita\nMais à frente, o prédio estará à sua esquerda");
+		dh.insertRoute(++id, 25, 26, R.drawable.rota_ceb_goledafruta, 276, "De costas para o prédio, siga à direita\nMais à frente, o prédio estará à sua esquerda");
 		dh.insertRoute(++id, 25, 10, R.drawable.rota_ceb_setoresportivo, 413, "De costas para o prédio, siga à direita\nEntre na primeira à direita\nSiga até o fim da rua\nEntre à esquerda\nMais à frente, a entrada estará à sua direita");
 		dh.insertRoute(++id, 13, 10, R.drawable.rota_residencia_setoresportivo, 361, "De costas para o prédio, siga à direita\nMais à frente, o prédio estará à sua direita");
 		dh.insertRoute(++id, 11, 25, R.drawable.rota_ccs_ceb, 126, "De costas para o prédio, siga à esquerda\nEntre à esquerda\nMais à frente, o prédio estará à sua direita");
@@ -196,10 +196,10 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 24, 1, R.drawable.rota_ca_lando, 145, "Siga até o estacionamento\nO conjunto de prédios estará á sua frente");
 		dh.insertRoute(++id, 17, 24, R.drawable.rota_ci_lando, 111, "De costas para o prédio, siga à direita\nMais à frente, o prédio estará à sua direita");
 		dh.insertRoute(++id, 33, 17, R.drawable.rota_ci_dmdfde, 54, "De costas para o prédio, o prédio estará à sua frente");
-		dh.insertRoute(++id, 8, 33, R.drawable.rota_dmdfde_ccen, 51, "De costas para a Biblioteca Setorial, siga à esquerda\nO prédio estará à sua direita");
+		dh.insertRoute(++id, 8, 33, R.drawable.rota_ccen_dmdfde, 51, "De costas para a Biblioteca Setorial, siga à esquerda\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 32, 8, R.drawable.rota_ccen_dqdgdcn, 170, "De costas para os pátios, siga à esquerda\nVocê chegará na região do Centro");
 		dh.insertRoute(++id, 31, 32, R.drawable.rota_santander_dqdg_dcn, 177, "De costas para o prédio, vire à direita\nA entrada para os prédios estará à sua direita");
-		dh.insertRoute(++id, 16, 22, R.drawable.rota_cta_ru, 169, "De costas para o restaurante, siga à direita\nEntre na primeira à direita\nOs prédios estarão à sua esquerda");		
+		dh.insertRoute(++id, 16, 22, R.drawable.rota_ru_cta, 169, "De costas para o restaurante, siga à direita\nEntre na primeira à direita\nOs prédios estarão à sua esquerda");		
 	
 		
 	}
