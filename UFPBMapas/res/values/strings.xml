@@ -17,10 +17,10 @@
     <string name="cancel">Cancelar</string>
     <string name="destination_name">Destinos</string>
     <string name="landmark_name">Posição</string>
-    <string name="landmark_button_list">-- Criar rota para:</string>
-    <string name="route_button_list">-- Instruções:</string>
+    <string name="landmark_button_list">Criar rota para:</string>
+    <string name="route_button_list">Instruções:</string>
     <string name="route_name">Rota</string>
-    <string name="destinationlandmark_button_list">-- Criar rota de:</string>
+    <string name="destinationlandmark_button_list">Criar rota de:</string>
     <string name="destinationlandmark_name">Destino</string>
     <string name="maps_text">Mapa da UFPB:</string>
     <string name="gps_name">Mapa da UFPB</string>
