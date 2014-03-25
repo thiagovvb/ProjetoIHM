@@ -61,14 +61,6 @@
     	    android:onClick="showMapScreen"
     	    android:textColor="#ffffff" />
 
-        <Button
-            android:id="@+id/eventButton"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:text="@string/evento_button"
-            android:textColor="#ffffff" />
-
     </LinearLayout>
 
 </LinearLayout>
