@@ -81,10 +81,10 @@ public class DestinationLandmarkActivity extends Activity {
 			DataHandler dh = new DataHandler(getApplicationContext());
 			dh.open();
 			Intent intent = getIntent();
-			Landmark source = (Landmark) intent.getSerializableExtra("Landmark");
-			Landmark destination;
+			Landmark destination = (Landmark) intent.getSerializableExtra("Landmark");
+			Landmark source;
 			//if(v.getId() < source.getId()){
-			destination = dh.fetchLandmark(v.getId());
+			source = dh.fetchLandmark(v.getId());
 			//} else {
 			//	destination = dh.fetchLandmark(v.getId());
 			//}
