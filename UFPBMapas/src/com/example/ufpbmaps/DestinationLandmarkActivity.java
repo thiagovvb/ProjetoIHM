@@ -165,18 +165,11 @@ public class DestinationLandmarkActivity extends Activity {
 	public void onActivityResult(int requestCode, int resultCode, Intent intent) {
 		if (requestCode == 0 && resultCode == Activity.RESULT_OK) {
 			QRCode = intent.getStringExtra("SCAN_RESULT");
-			
-			DataHandler dh = new DataHandler(getApplicationContext());
-			dh.open();
-
 			int key = Integer.parseInt(accessCode());
-			Landmark landmark = dh.fetchLandmark(key);
-			Intent intent2 = new Intent(this, LandmarkActivity.class);
-			intent2.putExtra("Landmark", landmark);
-			
-			dh.close();
-			
-			startActivity(intent2);			
+			Intent intent2 = getIntent();
+			Landmark source = (Landmark) intent2.getSerializableExtra("Landmark");
+			initiateRouteActivity(source.getId(), key);	
+			//asdasd
 		}
 	}
 	
