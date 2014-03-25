@@ -125,10 +125,11 @@ public class Graph {
 		
 		System.out.println("Começou Dijkstra, source = " + source);
 		
-		int[] ids = new int[landmark.size()];
-		dist = new int[landmark.size()];
-		prev = new int[landmark.size()];
-		boolean[] vis = new boolean[landmark.size()];
+		int count = landmark.size();
+		int[] ids = new int[count];
+		dist = new int[count];
+		prev = new int[count];
+		boolean[] vis = new boolean[count];
 		ArrayList<Integer> q = new ArrayList<Integer>();
 		
 		for (Landmark l : landmark) {
@@ -151,11 +152,12 @@ public class Graph {
 				}
 			}
 			
-			q.remove(i-1);
-			vis[i-1] = true;
+			count--;
 			
-			if(dist[i-1] == Integer.MAX_VALUE)
+			if(i == -1)
 				break;
+
+			vis[i-1] = true;
 			
 			ArrayList<Integer> connected = getConnectedTo(i);
 			
