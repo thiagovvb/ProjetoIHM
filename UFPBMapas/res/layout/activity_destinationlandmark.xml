@@ -16,7 +16,7 @@
         android:paddingTop="10dp"
         android:text="@string/landmark_name"
         android:textColor="#ffffff"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
     
     <ImageView
         android:id="@+id/landmarkImage"
@@ -40,9 +40,13 @@
                 android:id="@+id/landmarkDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+				android:paddingBottom="10dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
                 android:text="@string/landmark_name"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/buttonTittle"
@@ -54,7 +58,7 @@
                 android:paddingTop="10dp"
                 android:text="@string/destinationlandmark_button_list"
                 android:textColor="#ffffff"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
         </LinearLayout>
 
