@@ -20,23 +20,31 @@ public class RouteActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_route);
 		
+		System.out.println("Começou onCreate de RouteActivity");
+		
 		idInRoute = 0;
+		
+		System.out.println("idInRoute agora é 0");
 		
 		Intent intent = getIntent();
 		cr = (CompleteRoute) intent.getSerializableExtra("CompleteRoute");
+		System.out.println("Pegou cr");
+		
+		int source = cr.getRoute(idInRoute).getSourceId();
+		int destination = cr.getRoute(idInRoute).getDestinationId();
 		
 		TextView t = (TextView) findViewById(R.id.landmarkName);
-		t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
-				+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
+		t.setText("De " + Graph.getInstance().getLandmark(source).getName()
+				+ " a " + Graph.getInstance().getLandmark(destination).getName());
+		System.out.println("Setou o texto acima da imagem");
 
 		ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 		i.setImageResource(cr.getRoute(idInRoute).getMap());
+		System.out.println("Setou a imagem");
 		
 		TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-		t2.setText(Graph.getInstance().getRoute(
-				Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
-				Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
-				).getInstruction());
+		t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
+		System.out.println("Setou o texto abaixo da imagem");
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,18 +67,21 @@ public class RouteActivity extends Activity {
 			
 			idInRoute--;
 			
-			TextView t = (TextView) findViewById(R.id.landmarkName);
-			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
+			int source = cr.getRoute(idInRoute).getSourceId();
+			int destination = cr.getRoute(idInRoute).getDestinationId();
 			
+			TextView t = (TextView) findViewById(R.id.landmarkName);
+			t.setText("De " + Graph.getInstance().getLandmark(source).getName()
+					+ " a " + Graph.getInstance().getLandmark(destination).getName());
+			System.out.println("Setou o texto acima da imagem");
+
 			ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 			i.setImageResource(cr.getRoute(idInRoute).getMap());
+			System.out.println("Setou a imagem");
 			
 			TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-			t2.setText(Graph.getInstance().getRoute(
-					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
-					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
-					).getInstruction());
+			t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
+			System.out.println("Setou o texto abaixo da imagem");
 			
 		}
 	}
@@ -80,18 +91,21 @@ public class RouteActivity extends Activity {
 			
 			idInRoute++;
 			
-			TextView t = (TextView) findViewById(R.id.landmarkName);
-			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
+			int source = cr.getRoute(idInRoute).getSourceId();
+			int destination = cr.getRoute(idInRoute).getDestinationId();
 			
+			TextView t = (TextView) findViewById(R.id.landmarkName);
+			t.setText("De " + Graph.getInstance().getLandmark(source + 1).getName()
+					+ " a " + Graph.getInstance().getLandmark(destination + 1).getName());
+			System.out.println("Setou o texto acima da imagem");
+
 			ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 			i.setImageResource(cr.getRoute(idInRoute).getMap());
+			System.out.println("Setou a imagem");
 			
 			TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-			t2.setText(Graph.getInstance().getRoute(
-					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
-					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
-					).getInstruction());
+			t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
+			System.out.println("Setou o texto abaixo da imagem");
 			
 		}
 	}

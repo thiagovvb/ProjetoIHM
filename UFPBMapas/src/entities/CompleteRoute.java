@@ -39,7 +39,6 @@ public class CompleteRoute implements Serializable {
 						Graph.getInstance().getRoute(
 								Graph.getInstance().getPrev()[aux-1], aux));
 				aux = Graph.getInstance().getPrev()[aux-1];
-				System.out.println(completeRoute.get(0).getInstruction());
 				if(aux == source) break;
 			}
 		}
