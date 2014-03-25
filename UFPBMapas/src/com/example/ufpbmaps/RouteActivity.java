@@ -26,15 +26,17 @@ public class RouteActivity extends Activity {
 		cr = (CompleteRoute) intent.getSerializableExtra("CompleteRoute");
 		
 		TextView t = (TextView) findViewById(R.id.landmarkName);
-		t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-				+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+		t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
+				+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
 
 		ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 		i.setImageResource(cr.getRoute(idInRoute).getMap());
 		
 		TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-		t2.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-				+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+		t2.setText(Graph.getInstance().getRoute(
+				Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
+				Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
+				).getInstruction());
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -54,29 +56,43 @@ public class RouteActivity extends Activity {
 	
 	public void gotoPrevious(View v){
 		if(idInRoute != 0) {
+			
 			idInRoute--;
+			
 			TextView t = (TextView) findViewById(R.id.landmarkName);
-			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
+					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
+			
 			ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 			i.setImageResource(cr.getRoute(idInRoute).getMap());
+			
 			TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-			t2.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+			t2.setText(Graph.getInstance().getRoute(
+					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
+					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
+					).getInstruction());
+			
 		}
 	}
 	
 	public void gotoNext(View v){
 		if(idInRoute != cr.getCompleteRoute().size() - 1) {
+			
 			idInRoute++;
+			
 			TextView t = (TextView) findViewById(R.id.landmarkName);
-			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+			t.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getName()
+					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getName());
+			
 			ImageView i = (ImageView) findViewById(R.id.landmarkImage);
 			i.setImageResource(cr.getRoute(idInRoute).getMap());
+			
 			TextView t2 = (TextView) findViewById(R.id.buttonTittle);
-			t2.setText("De " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId())
-					+ " a " + Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()));
+			t2.setText(Graph.getInstance().getRoute(
+					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getSourceId()).getId(),
+					Graph.getInstance().getLandmark(cr.getRoute(idInRoute).getDestinationId()).getId()
+					).getInstruction());
+			
 		}
 	}
 }

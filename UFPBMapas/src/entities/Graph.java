@@ -15,17 +15,11 @@ public class Graph {
 	private static Graph uniqueInstance = null;
 	
 	private Graph() {
-		System.out.println("Começou Graph");
 		DataHandler dh = new DataHandler(context);
 		dh.open();
-		System.out.println("Gerou e abriu dh");
 		landmark = dh.fetchLandmark();
-		System.out.println("Fetchou landmarks");
 		route = dh.fetchRoute();
-		System.out.println("Fetchou routes");
 		dh.close();
-		System.out.println("Fechou dh");
-		System.out.println("Acabou Graph");
 	}
 	
 	public static Graph getInstance() {
@@ -123,8 +117,6 @@ public class Graph {
 	
 	public void dijkstra(int source) {
 		
-		System.out.println("Começou Dijkstra, source = " + source);
-		
 		int count = landmark.size();
 		int[] ids = new int[count];
 		dist = new int[count];
@@ -170,8 +162,6 @@ public class Graph {
 			}
 			
 		}
-		
-		System.out.println("Acabou Dijkstra");
 		
 	}
 }

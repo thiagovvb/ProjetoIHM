@@ -30,7 +30,6 @@ public class CompleteRoute implements Serializable {
 	}
 	
 	public void create(int source, int destination) {
-		System.out.println("Começou create");
 		Graph.getInstance().dijkstra(source);
 		int j = Graph.getInstance().getDistSize();
 		int aux = destination;
@@ -40,9 +39,9 @@ public class CompleteRoute implements Serializable {
 						Graph.getInstance().getRoute(
 								Graph.getInstance().getPrev()[aux-1], aux));
 				aux = Graph.getInstance().getPrev()[aux-1];
+				System.out.println(completeRoute.get(0).getInstruction());
 				if(aux == source) break;
 			}
 		}
-		System.out.println("Acabou create");
 	}
 }
