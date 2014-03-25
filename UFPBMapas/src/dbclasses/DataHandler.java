@@ -104,6 +104,12 @@ public class DataHandler {
 		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, null, null, null, null, null));
 	}
 
+	public int getIdFromAcronym(String acronym){
+		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
+		String where = "acronym = " + acronym;
+		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null)).get(0).getId();
+	}
+	
 	public ArrayList<Landmark> fetchRelevantLandmarks(){
 		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
 		String where = "relevant = 1";
