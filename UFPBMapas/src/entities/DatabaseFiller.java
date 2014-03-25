@@ -158,7 +158,7 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 3, 1, R.drawable.rota_ca_ccsa, 79, "Atravesse a rua em direção ao conjunto de prédios enfileirados");
 		dh.insertRoute(++id, 4, 3, R.drawable.rota_ccsa_ce, 123, "Observe a placa denominada CCSA\nAnde em direção a ela");
 		dh.insertRoute(++id, 5, 4, R.drawable.rota_ce_cchla, 91, "Siga na direção oposta à rotatória mais próxima\nSerá o próximo conjunto de prédios");
-		dh.insertRoute(++id, 34, 5, R.drawable.rota_cchla_rotatoria, 5, "Observe a placa denominada CCHLA\nAnde em direção a ela");
+		dh.insertRoute(++id, 34, 5, R.drawable.rota_cchla_rotatoria, 58, "Observe a placa denominada CCHLA\nAnde em direção a ela");
 		dh.insertRoute(++id, 30, 34, R.drawable.rota_rotatoria_concerthall, 56, "Siga até a rotatória mais próxima");
 		dh.insertRoute(++id, 22, 34, R.drawable.rota_cta_rotatoria, 150, "Siga em frente em direção à principal\nVire à direita\nSiga em frente em direção à rotatória");
 		dh.insertRoute(++id, 16, 34, R.drawable.rota_ru_rotatoria, 222, "Siga em frente na direção oposta ao estacionamento\nSerá a primeira rotatória, em frente à entrada da UFPB");

@@ -20,6 +20,7 @@ public class Graph {
 		landmark = dh.fetchLandmark();
 		route = dh.fetchRoute();
 		dh.close();
+		System.out.println("O total de rotas capturadas é " + route.size());
 	}
 	
 	public static Graph getInstance() {
