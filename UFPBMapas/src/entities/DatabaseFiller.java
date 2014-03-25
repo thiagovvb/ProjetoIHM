@@ -129,7 +129,7 @@ public class DatabaseFiller {
 		dh.insertRoute(++id, 20, 7, R.drawable.rota_bb_bibliotecacentral, 44, "Atravesse a rua\nO prédio estará à sua frente");
 		dh.insertRoute(++id, 7, 31, R.drawable.rota_santander_bibliotecacentral, 136, "De costas para o prédio, siga à direita\nO prédio estará à sua frente");
 		dh.insertRoute(++id, 31, 29, R.drawable.rota_nti_santander, 107, "De costas para o prédio, siga em frente até chegar à rua\nVire à direita\nO prédio estará à sua direita");
-		dh.insertRoute(++id, 7, 29, R.drawable.rota_santander_bibliotecacentral, 165, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
+		dh.insertRoute(++id, 7, 29, R.drawable.rota_nti_bibliotecacentral, 165, "De costas para o prédio, siga à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 29, 26, R.drawable.rota_nti_goledafruta, 74, "De costas ao prédio, entre à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 26, 19, R.drawable.rota_goledafruta_ufpbvirtual, 69, "Atravesse a rua\nVire à esquerda\nEntre à direita\nO prédio estará à sua direita");
 		dh.insertRoute(++id, 29, 19, R.drawable.rota_nti_ufpbvirtual, 64, "De costas para o prédio, siga em frente\nO prédio estará à sua direita");
