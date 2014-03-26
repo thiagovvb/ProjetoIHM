@@ -4,6 +4,8 @@ import java.util.StringTokenizer;
 
 import dbclasses.DataHandler;
 import dbclasses.DatabaseFiller;
+import dbclasses.LandmarkEntity;
+import dbclasses.RouteEntity;
 import entities.Landmark;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -30,8 +32,8 @@ public class MainActivity extends Activity {
 				
 		DataHandler h = new DataHandler(getApplicationContext());
 		h.open();
-		//h.clearTable(LandmarkEntity.TABLE_NAME);
-		//h.clearTable(RouteEntity.TABLE_NAME);
+		h.clearTable(LandmarkEntity.TABLE_NAME);
+		h.clearTable(RouteEntity.TABLE_NAME);
 		
 		 
 		/*h.insertLandmark(0, "UFPB", "Universidade Federal da Paraiba", 5, "ah oi", 1);
