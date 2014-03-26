@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import dbclasses.DataHandler;
 import entities.Landmark;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;

@@ -3,9 +3,7 @@ package com.example.ufpbmaps;
 import java.util.StringTokenizer;
 
 import dbclasses.DataHandler;
-import dbclasses.LandmarkEntity;
-import dbclasses.RouteEntity;
-import entities.DatabaseFiller;
+import dbclasses.DatabaseFiller;
 import entities.Landmark;
 import android.app.Activity;
 import android.app.AlertDialog;

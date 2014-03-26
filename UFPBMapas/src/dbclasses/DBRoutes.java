@@ -1,6 +1,8 @@
-package entities;
+package dbclasses;
 
 import java.util.ArrayList;
+
+import entities.Route;
 
 public class DBRoutes {
 

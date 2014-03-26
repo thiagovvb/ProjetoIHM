@@ -1,14 +1,11 @@
 package com.example.ufpbmaps;
 
-import entities.TouchImageView;
-import android.app.ActionBar;
+
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.ImageView.ScaleType;
 
 public class MapActivity extends Activity {
 

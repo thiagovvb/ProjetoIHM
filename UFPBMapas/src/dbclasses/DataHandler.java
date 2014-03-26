@@ -1,6 +1,5 @@
 package dbclasses;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import entities.Landmark;
@@ -10,7 +9,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataHandler {
@@ -106,7 +104,7 @@ public class DataHandler {
 
 	public int getIdFromAcronym(String acronym){
 		String[] columns = new String[] {LandmarkEntity.ID, LandmarkEntity.ACRONYM, LandmarkEntity.NAME, LandmarkEntity.PICTURE, LandmarkEntity.DESCRIPTION, LandmarkEntity.RELEVANT};
-		String where = "acronym = " + acronym;
+		String where = "acronym = '" + acronym + "'";
 		return assembleLandmark(db.query(LandmarkEntity.TABLE_NAME, columns, where, null, null, null, null)).get(0).getId();
 	}
 	
