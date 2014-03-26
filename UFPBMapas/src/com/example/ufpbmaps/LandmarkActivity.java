@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import dbclasses.DataHandler;
 import entities.CompleteRoute;
 import entities.Landmark;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -87,7 +88,7 @@ public class LandmarkActivity extends Activity {
 		return true;
 	}
 	
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {	
         if (item.getItemId() == R.id.aboutUs) {
         	new AlertDialog.Builder(this).setMessage(R.string.aboutUs).setTitle("About").setPositiveButton("Voltar", null).show();
             return true;

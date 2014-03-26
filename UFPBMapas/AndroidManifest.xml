@@ -25,12 +25,51 @@
             </intent-filter>
         </activity>
         
-        <activity android:label="@string/landmark_name" android:name="LandmarkActivity" android:screenOrientation="portrait"/>
-        <activity android:label="@string/route_name" android:name="RouteActivity" android:screenOrientation="portrait"/>
-        <activity android:label="@string/gps_name" android:name="MapActivity" android:screenOrientation="portrait"/>
-        <activity android:label="@string/destination_name" android:name="DestinationActivity" android:screenOrientation="portrait"/>
-        <activity android:label="@string/destinationlandmark_name" android:name="DestinationLandmarkActivity" android:screenOrientation="portrait"/>
+        <activity android:label="@string/landmark_name" 
+            android:name="LandmarkActivity" 
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.ufpbmaps.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.ufpbmaps.MainActivity" />
+        </activity>
         
-    </application>
+        <activity android:label="@string/route_name" 
+            android:name="RouteActivity" 
+            android:screenOrientation="portrait"            
+            android:parentActivityName="com.example.ufpbmaps.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.ufpbmaps.MainActivity" />
+        </activity>
+        
+        <activity android:label="@string/gps_name" 
+            android:name="MapActivity" 
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.ufpbmaps.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.ufpbmaps.MainActivity" />
+        </activity>
+        
+        <activity android:label="@string/destination_name" 
+            android:name="DestinationActivity" 
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.ufpbmaps.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.ufpbmaps.MainActivity" />
+        </activity>
+        
+        <activity android:label="@string/destinationlandmark_name" 
+            android:name="DestinationLandmarkActivity" 
+            android:screenOrientation="portrait"
+            android:parentActivityName="com.example.ufpbmaps.MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.ufpbmaps.MainActivity" />
+        </activity>
+        
+    </application> 
 
 </manifest>

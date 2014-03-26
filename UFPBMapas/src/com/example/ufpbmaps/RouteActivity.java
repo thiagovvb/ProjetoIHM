@@ -1,5 +1,6 @@
 package com.example.ufpbmaps;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -19,8 +20,7 @@ public class RouteActivity extends Activity {
 	
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_route);
-		
+	    
 		System.out.println("Começou onCreate de RouteActivity");
 		
 		idInRoute = 0;
@@ -30,6 +30,12 @@ public class RouteActivity extends Activity {
 		Intent intent = getIntent();
 		cr = (CompleteRoute) intent.getSerializableExtra("CompleteRoute");
 		System.out.println("Pegou cr");
+		
+		if(cr.getCompleteRoute().size() == 1) {
+			setContentView(R.layout.activity_directroute);
+		} else {
+			setContentView(R.layout.activity_route_first);
+		}		
 		
 		int source = cr.getRoute(idInRoute).getSourceId();
 		int destination = cr.getRoute(idInRoute).getDestinationId();
@@ -46,9 +52,7 @@ public class RouteActivity extends Activity {
 		TextView t2 = (TextView) findViewById(R.id.buttonTittle);
 		t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
 		System.out.println("Setou o texto abaixo da imagem");
-		
-		/*Button b = (Button) findViewById(R.id.buttonPrevious);
-		b.setVisibility(View.INVISIBLE);*/
+
 	}
 	
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -67,11 +71,12 @@ public class RouteActivity extends Activity {
     }
 	
 	public void gotoPrevious(View v){
-		/*Button b1 = (Button) findViewById(R.id.buttonNext);
-		b1.setVisibility(View.VISIBLE);
-		*/
 		if(idInRoute != 0) {
-			
+			if(idInRoute == 1){
+				setContentView(R.layout.activity_route_first);
+			}else{
+				setContentView(R.layout.activity_route);
+			}
 			idInRoute--;
 			
 			int source = cr.getRoute(idInRoute).getSourceId();
@@ -89,19 +94,19 @@ public class RouteActivity extends Activity {
 			TextView t2 = (TextView) findViewById(R.id.buttonTittle);
 			t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
 			System.out.println("Setou o texto abaixo da imagem");
-			
-		}/* else {
-			Button b2 = (Button) findViewById(R.id.buttonPrevious);
-			b2.setVisibility(View.INVISIBLE);
-		}*/
+					
+		}
+		
 	}
 	
 	public void gotoNext(View v){
-		/*Button b1 = (Button) findViewById(R.id.buttonPrevious);
-		b1.setVisibility(View.VISIBLE);
-		*/
 		if(idInRoute != cr.getCompleteRoute().size() - 1) {
-			
+			if(idInRoute == cr.getCompleteRoute().size() - 2) {
+				setContentView(R.layout.activity_route_last);
+			}
+			else {
+				setContentView(R.layout.activity_route);
+			}
 			idInRoute++;
 			
 			int source = cr.getRoute(idInRoute).getSourceId();
@@ -120,11 +125,8 @@ public class RouteActivity extends Activity {
 			t2.setText(Graph.getInstance().getRoute(source, destination).getInstruction());
 			System.out.println("Setou o texto abaixo da imagem");
 			
-		}
-		/*
-		if(idInRoute != cr.getCompleteRoute().size() - 2) {
-			Button b2 = (Button) findViewById(R.id.buttonNext);
-			b2.setVisibility(View.INVISIBLE);
-		}*/
+		} 
+		
 	}
+	
 }

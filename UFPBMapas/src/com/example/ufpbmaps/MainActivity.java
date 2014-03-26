@@ -71,18 +71,25 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.preferencias, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 	
 	public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.aboutUs) {
+		if(item.getItemId() == R.id.sair){
+			finish();
+		}
+        if (item.getItemId() == R.id.about) {
         	new AlertDialog.Builder(this).setMessage(R.string.aboutUs).setTitle("About").setPositiveButton("Voltar", null).show();
             return true;
         }
      
         return super.onOptionsItemSelected(item);
     }
+	
+	protected void onActivityResult() {
+		
+	}
 	
 	public MainActivity() {
 		// TODO Auto-generated constructor stub
